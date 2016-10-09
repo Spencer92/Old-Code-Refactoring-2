@@ -67,7 +67,9 @@ public class Football
 		String input = "\0";
 		int counter;
 		Statistics statistics = new Statistics();
-		Scanner userInput;
+		Scanner userInput1;
+		Scanner userInput2;
+		Scanner userInput3;
 		MatchupStatistics matchupStatistics;
 		TeamHistory teamHistory;
 		MatchupHistory matchupHistory;
@@ -82,15 +84,15 @@ public class Football
 			System.out.println("Q - Quit");
 			System.out.print("Please enter your choice (in all caps): ");
 			
-			userInput = new Scanner(System.in);
-			input = userInput.next();
+			userInput1 = new Scanner(System.in);
+			input = userInput1.next();
 			switch (input)
 			{
 			case teamStatistics:
 				
 				System.out.print("Please Enter a team (in all caps): ");
-				userInput = new Scanner(System.in);
-				homeTeam = userInput.next();
+				userInput2 = new Scanner(System.in);
+				homeTeam = userInput2.next();
 				
 				teamHistory = new TeamHistory(homeTeam, statistics.getTotalLines(), 
 						statistics.getHomeScore(), statistics.getAwayScore(),
@@ -117,11 +119,11 @@ public class Football
 				
 			case getMatchupStatistics:
 				System.out.print("Please enter first team (in all caps): ");
-				userInput = new Scanner(System.in);
-				homeTeam = userInput.next();
+				userInput2 = new Scanner(System.in);
+				homeTeam = userInput2.next();
 				System.out.print("Please enter second team (in all caps): ");
-				userInput = new Scanner(System.in);
-				awayTeam = userInput.next();
+				userInput3 = new Scanner(System.in);
+				awayTeam = userInput3.next();
 				
 				
 				matchupStatistics = new MatchupStatistics(homeTeam,
@@ -169,11 +171,11 @@ public class Football
 				
 			case showMatchupHistory:
 				System.out.print("Please enter the first team (in all caps): ");
-				userInput = new Scanner(System.in);
-				homeTeam = userInput.next();
+				userInput2 = new Scanner(System.in);
+				homeTeam = userInput2.next();
 				System.out.print("Please enter the second team (in all caps): ");
-				userInput = new Scanner(System.in);
-				awayTeam = userInput.next();
+				userInput2 = new Scanner(System.in);
+				awayTeam = userInput2.next();
 				
 				matchupHistory = new MatchupHistory(homeTeam,
 						awayTeam, statistics.getTotalLines(), 
