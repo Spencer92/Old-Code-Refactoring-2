@@ -170,10 +170,10 @@ public class Football
 				
 				
 			case showMatchupHistory:
-				System.out.print("Please enter the first team (in all caps): ");
+				System.out.print("Please enter the home team (in all caps): ");
 				userInput2 = new Scanner(System.in);
 				homeTeam = userInput2.next();
-				System.out.print("Please enter the second team (in all caps): ");
+				System.out.print("Please enter the away team (in all caps): ");
 				userInput2 = new Scanner(System.in);
 				awayTeam = userInput2.next();
 				
