@@ -30,27 +30,7 @@ public class UserInput
 		case teamStatistics:
 			
 			getTeamHistory(statistics, userInput2, homeTeam);
-/*			System.out.print("Please Enter a team (in all caps): ");
-//			userInput2 = new Scanner(System.in);
-			homeTeam = userInput2.next();
-			
-			teamHistory = new TeamHistory(homeTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway());
-			if(teamHistory.isTeamExists())
-			{
-				System.out.println("Stats for " + homeTeam + ":");
-				System.out.println("Wins:\t\t" + teamHistory.getWins());
-				System.out.println("Losses:\t\t" + teamHistory.getLosses());
-				System.out.println("Ties:\t\t" + teamHistory.getTies());
-				System.out.println("Most Points:\t" + teamHistory.getMostPoints());
-				System.out.println("Win percentage:\t" + (int)teamHistory.getWinPercentage() + "%");
-			}
-			else
-			{
-				System.out.println(homeTeam + " is not a valid team name");
-			}*/
+
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
 			//if not, notify the user and go back to the menu
