@@ -68,7 +68,7 @@ public class TeamHistory
 		{
 			if(inputTeam.equals(homeTeam[counter]))
 			{
-				System.out.println(homeTeam[counter]);
+//				System.out.println(homeTeam[counter]);
 				this.teamExists = true;
 				if(homeScore[counter] < awayScore[counter])
 				{

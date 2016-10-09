@@ -73,6 +73,7 @@ public class Football
 		MatchupStatistics matchupStatistics;
 		TeamHistory teamHistory;
 		MatchupHistory matchupHistory;
+		UserInput options;
 
 		statistics.process();
 		while(input != "Q")
@@ -86,7 +87,9 @@ public class Football
 			
 			userInput1 = new Scanner(System.in);
 			input = userInput1.next();
-			switch (input)
+			options = new UserInput(input, statistics);
+			
+/*			switch (input)
 			{
 			case teamStatistics:
 				
@@ -222,7 +225,7 @@ public class Football
 			System.out.println("Invalid input, please try again!");
 			break;
 			
-			}
+			}*/
 			
 		}
 		
