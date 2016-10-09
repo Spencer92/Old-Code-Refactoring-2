@@ -4,30 +4,34 @@ import java.util.Scanner;
 
 public class UserInput 
 {
+
+	private TeamHistory teamHistory;
+
 	
-	public UserInput(String input, Statistics statistics)
+	public void start(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
 	{
 		final String teamStatistics = "T";
 		final String getMatchupStatistics = "M";
 		final String showMatchupHistory = "H";
 		final String quit = "Q";
-		String homeTeam;
+		String homeTeam = null;
 		String awayTeam;
 		int counter;
 		Scanner userInput1;
-		Scanner userInput2;
-		Scanner userInput3;
+//		Scanner userInput2;
+//		Scanner userInput3;
 		MatchupStatistics matchupStatistics;
-		TeamHistory teamHistory;
+//		TeamHistory teamHistory = null;
 		MatchupHistory matchupHistory;
-		
+
 		
 		switch (input)
 		{
 		case teamStatistics:
 			
-			System.out.print("Please Enter a team (in all caps): ");
-			userInput2 = new Scanner(System.in);
+			getTeamHistory(statistics, userInput2, homeTeam);
+/*			System.out.print("Please Enter a team (in all caps): ");
+//			userInput2 = new Scanner(System.in);
 			homeTeam = userInput2.next();
 			
 			teamHistory = new TeamHistory(homeTeam, statistics.getTotalLines(), 
@@ -46,7 +50,7 @@ public class UserInput
 			else
 			{
 				System.out.println(homeTeam + " is not a valid team name");
-			}
+			}*/
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
 			//if not, notify the user and go back to the menu
@@ -54,11 +58,14 @@ public class UserInput
 			
 			
 		case getMatchupStatistics:
+
+//			userInput2 = new Scanner(System.in);
+//			userInput3 = new Scanner(System.in);
 			System.out.print("Please enter first team (in all caps): ");
-			userInput2 = new Scanner(System.in);
+//			userInput2 = new Scanner(System.in);
 			homeTeam = userInput2.next();
 			System.out.print("Please enter second team (in all caps): ");
-			userInput3 = new Scanner(System.in);
+//			userInput3 = new Scanner(System.in);
 			awayTeam = userInput3.next();
 			
 			
@@ -107,11 +114,11 @@ public class UserInput
 			
 		case showMatchupHistory:
 			System.out.print("Please enter the home team (in all caps): ");
-			userInput2 = new Scanner(System.in);
+//			userInput2 = new Scanner(System.in);
 			homeTeam = userInput2.next();
 			System.out.print("Please enter the away team (in all caps): ");
-			userInput2 = new Scanner(System.in);
-			awayTeam = userInput2.next();
+//			userInput3 = new Scanner(System.in);
+			awayTeam = userInput3.next();
 			
 			matchupHistory = new MatchupHistory(homeTeam,
 					awayTeam, statistics.getTotalLines(), 
@@ -159,4 +166,35 @@ public class UserInput
 			break;
 		}
 	}
+	
+	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
+	{
+		System.out.print("Please Enter a team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		team = input.next();
+		
+		teamHistory = new TeamHistory(team, statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway());
+		if(teamHistory.isTeamExists())
+		{
+			System.out.println("Stats for " + team + ":");
+			System.out.println("Wins:\t\t" + teamHistory.getWins());
+			System.out.println("Losses:\t\t" + teamHistory.getLosses());
+			System.out.println("Ties:\t\t" + teamHistory.getTies());
+			System.out.println("Most Points:\t" + teamHistory.getMostPoints());
+			System.out.println("Win percentage:\t" + (int)teamHistory.getWinPercentage() + "%");
+		}
+		else
+		{
+			System.out.println(team + " is not a valid team name");
+		}
+	}
+	
+	public TeamHistory getTeamHistoryRaw()
+	{
+		return this.teamHistory;
+	}
+	
 }

@@ -86,8 +86,11 @@ public class Football
 			System.out.print("Please enter your choice (in all caps): ");
 			
 			userInput1 = new Scanner(System.in);
+			userInput2 = new Scanner(System.in);
+			userInput3 = new Scanner(System.in);
 			input = userInput1.next();
-			options = new UserInput(input, statistics);
+			options = new UserInput();
+			options.start(input, statistics, userInput2, userInput3);
 			
 			
 		}
