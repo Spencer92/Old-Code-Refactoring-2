@@ -19,7 +19,7 @@
 //
 //
 
-package assign1;
+package assign1.code;
 import java.util.Scanner;
 
 public class Football 

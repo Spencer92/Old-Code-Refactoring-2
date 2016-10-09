@@ -12,7 +12,7 @@
 //				
 //
 /***************************************************************************/
-package assign1;
+package assign1.code;
 
 public class TeamHistory
 {

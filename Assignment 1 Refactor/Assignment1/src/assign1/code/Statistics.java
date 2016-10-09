@@ -19,7 +19,7 @@
 /***************************************************************************/
 
 
-package assign1;
+package assign1.code;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
