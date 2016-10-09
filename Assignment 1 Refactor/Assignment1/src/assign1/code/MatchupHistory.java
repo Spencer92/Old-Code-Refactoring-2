@@ -101,7 +101,7 @@ public class MatchupHistory
 		if(this.teamOneExists && this.teamTwoExists)
 		{
 			this.teamDisplayOne = new String[matchesOne];
-			this.teamDisplayTwo = new String[matchesTwo];
+//			this.teamDisplayTwo = new String[matchesTwo];
 			for(counter = 0; counter < totalLines; counter++)
 			{
 				if(inputTeamOne.equals(homeTeam[counter]) && inputTeamTwo.equals(awayTeam[counter]))
@@ -114,6 +114,7 @@ public class MatchupHistory
 					//displays the history of the match for when the first team is home
 					//and the second team is away
 				}
+				/*
 				if(inputTeamOne.equals(awayTeam[counter]) && inputTeamTwo.equals(homeTeam[counter]))
 				{
 					System.out.println("in input team one");
@@ -125,6 +126,7 @@ public class MatchupHistory
 					//displays the history of the match for when the first team is away
 					//and the second team is home
 				}
+				*/
 			}
 		}
 	}

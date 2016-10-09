@@ -201,10 +201,16 @@ public class Football
 						System.out.println(matchupHistory.getTeamDisplayOne()[counter]);
 					}
 					
-					for(counter = 0; counter < matchupHistory.getMatches(); counter++)
+/*					for(counter = 0; counter < matchupHistory.getMatches(); counter++)
 					{
-						System.out.println(matchupHistory.getTeamDisplayTwo()[counter]);
-					}
+						try
+						{
+							System.out.println(matchupHistory.getTeamDisplayTwo()[counter]);
+						}
+						catch(ArrayIndexOutOfBoundsException e)
+						{
+						}
+					}*/
 					//if the team names are valid, display the history between the two teams
 					//otherwise if one or more of the teams don't exist notify the user and
 					//return to the menu
