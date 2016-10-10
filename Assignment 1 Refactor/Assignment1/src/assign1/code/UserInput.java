@@ -41,57 +41,6 @@ public class UserInput
 		case getMatchupStatistics:
 
 			getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
-/*
-			//			userInput2 = new Scanner(System.in);
-//			userInput3 = new Scanner(System.in);
-			System.out.print("Please enter first team (in all caps): ");
-//			userInput2 = new Scanner(System.in);
-			homeTeam = userInput2.next();
-			System.out.print("Please enter second team (in all caps): ");
-//			userInput3 = new Scanner(System.in);
-			awayTeam = userInput3.next();
-			
-			
-			matchupStatistics = new MatchupStatistics(homeTeam,
-					awayTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway());
-			if(matchupStatistics.isTeamOneExists() && matchupStatistics.isTeamTwoExists()
-					&& matchupStatistics.getGamesPlayed() != 0)
-			{
-				System.out.println("Games Played:\t" + matchupStatistics.getGamesPlayed());
-				System.out.println(homeTeam + " Won:\t" + matchupStatistics.getTeamOneWins());
-				System.out.println(awayTeam + " Won:\t" + matchupStatistics.getTeamTwoWins());
-				System.out.println("Ties:\t\t" + matchupStatistics.getTies());
-				if(matchupStatistics.getTeamOneWins() > matchupStatistics.getTeamTwoWins())
-				{
-					System.out.println("Matchup favours " + homeTeam);
-				}
-				else if(matchupStatistics.getTeamOneWins() < matchupStatistics.getTeamTwoWins())
-				{
-					System.out.println("Matchup favours " + awayTeam);
-				}
-				else
-				{
-					System.out.println("Matchup favours no one");
-				}
-				//if the teams exist display the match-up statistics for both teams
-			}
-			else if(!matchupStatistics.isTeamOneExists())
-			{
-				System.out.println(homeTeam + " is not a valid team name");
-			}
-			else if(!matchupStatistics.isTeamTwoExists())
-			{
-				System.out.println(awayTeam + " is not a valid team name");
-			}
-			else if(matchupStatistics.getGamesPlayed() == 0)
-			{
-				System.out.println(homeTeam + " and " + awayTeam + " have never faced each other");
-			}*/
-			//if one of the teams don't exist or never faced each other notify 
-			//the user
 			break;
 			
 			
