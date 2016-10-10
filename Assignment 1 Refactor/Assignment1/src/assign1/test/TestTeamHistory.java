@@ -7,14 +7,14 @@ import org.junit.Test;
 import assign1.code.*;
 
 
-public class TestUserInput 
+public class TestTeamHistory 
 {
 	Statistics statistics;
 	UserInput userInput = new UserInput();
 	Scanner input1;
 	Scanner input2;
 	Scanner input3;
-	public TestUserInput()
+	public TestTeamHistory()
 	{
 		statistics = new Statistics();
 		statistics.process();

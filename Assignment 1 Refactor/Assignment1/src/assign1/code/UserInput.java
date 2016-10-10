@@ -6,6 +6,7 @@ public class UserInput
 {
 
 	private TeamHistory teamHistory;
+	private MatchupStatistics matchupStatistics;
 
 	
 	public void start(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
@@ -15,7 +16,7 @@ public class UserInput
 		final String showMatchupHistory = "H";
 		final String quit = "Q";
 		String homeTeam = null;
-		String awayTeam;
+		String awayTeam = null;
 		int counter;
 		Scanner userInput1;
 //		Scanner userInput2;
@@ -39,7 +40,9 @@ public class UserInput
 			
 		case getMatchupStatistics:
 
-//			userInput2 = new Scanner(System.in);
+			getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
+/*
+			//			userInput2 = new Scanner(System.in);
 //			userInput3 = new Scanner(System.in);
 			System.out.print("Please enter first team (in all caps): ");
 //			userInput2 = new Scanner(System.in);
@@ -86,7 +89,7 @@ public class UserInput
 			else if(matchupStatistics.getGamesPlayed() == 0)
 			{
 				System.out.println(homeTeam + " and " + awayTeam + " have never faced each other");
-			}
+			}*/
 			//if one of the teams don't exist or never faced each other notify 
 			//the user
 			break;
@@ -147,6 +150,59 @@ public class UserInput
 		}
 	}
 	
+	public void getMatchupStatistics(Statistics statistics, Scanner teamOneInput, Scanner teamTwoInput,
+			String teamOne, String teamTwo)
+	{
+//		userInput2 = new Scanner(System.in);
+//		userInput3 = new Scanner(System.in);
+		System.out.print("Please enter first team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		teamOne = teamOneInput.next();
+		System.out.print("Please enter second team (in all caps): ");
+//		userInput3 = new Scanner(System.in);
+		teamTwo = teamTwoInput.next();
+		
+		
+		matchupStatistics = new MatchupStatistics(teamOne,
+				teamTwo, statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway());
+		if(matchupStatistics.isTeamOneExists() && matchupStatistics.isTeamTwoExists()
+				&& matchupStatistics.getGamesPlayed() != 0)
+		{
+			System.out.println("Games Played:\t" + matchupStatistics.getGamesPlayed());
+			System.out.println(teamOne + " Won:\t" + matchupStatistics.getTeamOneWins());
+			System.out.println(teamTwo + " Won:\t" + matchupStatistics.getTeamTwoWins());
+			System.out.println("Ties:\t\t" + matchupStatistics.getTies());
+			if(matchupStatistics.getTeamOneWins() > matchupStatistics.getTeamTwoWins())
+			{
+				System.out.println("Matchup favours " + teamOne);
+			}
+			else if(matchupStatistics.getTeamOneWins() < matchupStatistics.getTeamTwoWins())
+			{
+				System.out.println("Matchup favours " + teamTwo);
+			}
+			else
+			{
+				System.out.println("Matchup favours no one");
+			}
+			//if the teams exist display the match-up statistics for both teams
+		}
+		else if(!matchupStatistics.isTeamOneExists())
+		{
+			System.out.println(teamOne + " is not a valid team name");
+		}
+		else if(!matchupStatistics.isTeamTwoExists())
+		{
+			System.out.println(teamTwo + " is not a valid team name");
+		}
+		else if(matchupStatistics.getGamesPlayed() == 0)
+		{
+			System.out.println(teamOne + " and " + teamTwo + " have never faced each other");
+		}
+	}
+	
 	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
 	{
 		System.out.print("Please Enter a team (in all caps): ");
@@ -175,6 +231,11 @@ public class UserInput
 	public TeamHistory getTeamHistoryRaw()
 	{
 		return this.teamHistory;
+	}
+	
+	public MatchupStatistics getMatchupStatisticsRaw()
+	{
+		return this.matchupStatistics;
 	}
 	
 }
