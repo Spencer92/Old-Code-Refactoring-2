@@ -51,15 +51,7 @@ public class UserInput
 			
 		case quit:
 			quit();
-/*			System.out.println("They're going to exit the program");
-			System.out.println("and then they're going to exit me");
-			System.out.print("oh my gooooooooooooooooooooooooooooooooooooooooo");
-			for(counter = 0; counter < 100; counter++)
-			{
-				System.out.print("ooooooooooooooooooooooooooooooooo");
-			}
-			System.out.println();
-			System.exit(0);*/
+
 			
 		default:
 			System.out.println("Invalid input, please try again!");
