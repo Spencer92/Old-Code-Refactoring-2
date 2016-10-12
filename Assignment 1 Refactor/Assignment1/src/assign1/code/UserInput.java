@@ -214,15 +214,30 @@ public class UserInput
 			System.out.println("-----------------------------------------");
 			for(counter = 0; counter < matchupHistory.getMatchesOne() + matchupHistory.getMatchesTwo(); counter++)
 			{
-				if(counterFirstTeam < matchupHistory.getMatchesOne() && matchupHistory.getTeamOne().equals(firstTeam))
+				if(counterFirstTeam < matchupHistory.getMatchesOne() && counterSecondTeam < matchupHistory.getMatchesTwo()
+						&& matchupHistory.getTeamOne().equals(firstTeam)
+						&& matchupHistory.getYearTeamOne()[counterFirstTeam] <= 
+						matchupHistory.getYearTeamTwo()[counterSecondTeam])
 				{
 					System.out.println(matchupHistory.getTeamDisplayOne()[counterFirstTeam]);
 					counterFirstTeam++;
 				}
-				else if(counterSecondTeam < matchupHistory.getMatchesTwo() && matchupHistory.getTeamTwo().equals(secondTeam))
+				else if(counterSecondTeam < matchupHistory.getMatchesTwo() && counterFirstTeam < matchupHistory.getMatchesOne()
+						&& matchupHistory.getTeamTwo().equals(secondTeam)
+						&& matchupHistory.getYearTeamTwo()[counterSecondTeam] < matchupHistory.getYearTeamOne()[counterFirstTeam] )
 				{
 					System.out.println(matchupHistory.getTeamDisplayTwo()[counterSecondTeam]);
 					counterSecondTeam++;
+				}
+				else if(counterFirstTeam >= matchupHistory.getMatchesOne() && counterSecondTeam < matchupHistory.getMatchesTwo())
+				{
+					System.out.println(matchupHistory.getTeamDisplayTwo()[counterSecondTeam]);
+					counterSecondTeam++;					
+				}
+				else if(counterSecondTeam >= matchupHistory.getMatchesTwo() && counterFirstTeam < matchupHistory.getMatchesOne())
+				{
+					System.out.println(matchupHistory.getTeamDisplayOne()[counterFirstTeam]);
+					counterFirstTeam++;
 				}
 			}/*
 			for(counter = 0; counter < matchupHistory.getMatchesOne(); counter++)

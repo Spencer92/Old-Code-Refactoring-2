@@ -32,6 +32,11 @@ public class MatchupHistory
 	private String inputTeamOne;
 	private String inputTeamTwo;
 
+	private int[] yearTeamOne;
+	private int[] yearTeamTwo;
+
+
+
 
 	/***************************************************************************/
 // Class Name:   	MatchupHistory
@@ -102,9 +107,12 @@ public class MatchupHistory
 				this.matchesTwo++;
 			}
 		}
+
 		//checks if the teams exist, and if they do find out how many times they've faced each other
 		if(this.teamOneExists && this.teamTwoExists)
 		{
+			this.yearTeamOne = new int[this.matchesOne];
+			this.yearTeamTwo = new int[this.matchesTwo];			
 			this.teamDisplayOne = new String[matchesOne];
 			this.teamDisplayTwo = new String[matchesTwo];
 			for(counter = 0; counter < totalLines; counter++)
@@ -115,6 +123,7 @@ public class MatchupHistory
 													week[counter] + "\t  " + inputTeamTwo + "  " +
 													Integer.toString(awayScore[counter]) + " \t  " +
 													inputTeamOne + " \t" + Integer.toString(homeScore[counter]);
+					this.yearTeamOne[matchCounterOne] = year[counter];
 					matchCounterOne++;
 					//displays the history of the match for when the first team is home
 					//and the second team is away
@@ -126,7 +135,9 @@ public class MatchupHistory
 							week[counter] + "\t  " + inputTeamOne + "  " +
 							Integer.toString(awayScore[counter]) + " \t  " +
 							inputTeamTwo + " \t" + Integer.toString(homeScore[counter]);
+					this.yearTeamTwo[matchCounterTwo] = year[counter];
 					matchCounterTwo++;
+					
 				}
 			}
 		}
@@ -135,6 +146,18 @@ public class MatchupHistory
 
 
 	//Getters and Setters
+	
+	public int[] getYearTeamOne() {
+		return yearTeamOne;
+	}
+
+
+
+	public int[] getYearTeamTwo() {
+		return yearTeamTwo;
+	}
+
+	
 	public String[] getTeamDisplayTwo() {
 		return teamDisplayTwo;
 	}
