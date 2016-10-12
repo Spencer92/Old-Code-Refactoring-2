@@ -47,42 +47,6 @@ public class UserInput
 			
 		case showMatchupHistory:
 			showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
-/*
-			System.out.print("Please enter the home team (in all caps): ");
-//			userInput2 = new Scanner(System.in);
-			homeTeam = userInput2.next();
-			System.out.print("Please enter the away team (in all caps): ");
-//			userInput3 = new Scanner(System.in);
-			awayTeam = userInput3.next();
-			
-			matchupHistory = new MatchupHistory(homeTeam,
-					awayTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway(), statistics.getYear(),
-					statistics.getWeek());
-			if(!matchupHistory.isTeamOneExists())
-			{
-				System.out.println(homeTeam + " is not a valid team name");
-			}
-			else if(!matchupHistory.isTeamTwoExists())
-			{
-				System.out.println(awayTeam + " is not a valid team name");
-			}
-			else
-			{
-				System.out.println("History of " + homeTeam + " VS " + awayTeam);
-				System.out.println("Year Week Away Away Score Home Home Score");
-				System.out.println("-----------------------------------------");
-				for(counter = 0; counter < matchupHistory.getMatches(); counter++)
-				{
-					System.out.println(matchupHistory.getTeamDisplayOne()[counter]);
-				}
-				
-				//if the team names are valid, display the history between the two teams
-				//otherwise if one or more of the teams don't exist notify the user and
-				//return to the menu
-			}*/
 			break;
 			
 		case quit:
