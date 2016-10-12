@@ -29,6 +29,8 @@ public class MatchupHistory
 	private String[] teamDisplayTwo;
 	private int matchesOne;
 	private int matchesTwo;
+	private String inputTeamOne;
+	private String inputTeamTwo;
 
 
 	/***************************************************************************/
@@ -76,6 +78,9 @@ public class MatchupHistory
 		this.teamTwoExists = false;
 		this.matchesOne = 0;
 		this.matchesTwo = 0;
+		this.inputTeamOne = inputTeamOne;
+		this.inputTeamTwo = inputTeamTwo;
+		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
@@ -101,6 +106,7 @@ public class MatchupHistory
 		if(this.teamOneExists && this.teamTwoExists)
 		{
 			this.teamDisplayOne = new String[matchesOne];
+			this.teamDisplayTwo = new String[matchesTwo];
 			for(counter = 0; counter < totalLines; counter++)
 			{
 				if(inputTeamOne.equals(homeTeam[counter]) && inputTeamTwo.equals(awayTeam[counter]))
@@ -112,6 +118,15 @@ public class MatchupHistory
 					matchCounterOne++;
 					//displays the history of the match for when the first team is home
 					//and the second team is away
+				}
+				else if(inputTeamOne.equals(awayTeam[counter]) && inputTeamTwo.equals(homeTeam[counter]))
+				{
+
+					this.teamDisplayTwo[matchCounterTwo] = Integer.toString(year[counter]) + " " +
+							week[counter] + "\t  " + inputTeamOne + "  " +
+							Integer.toString(awayScore[counter]) + " \t  " +
+							inputTeamTwo + " \t" + Integer.toString(homeScore[counter]);
+					matchCounterTwo++;
 				}
 			}
 		}
@@ -138,7 +153,7 @@ public class MatchupHistory
 		return teamDisplayOne;
 	}
 
-	public int getMatches() {
+	public int getMatchesOne() {
 		return matchesOne;
 	}
 	
@@ -146,5 +161,14 @@ public class MatchupHistory
 		return matchesTwo;
 	}
 
+	public String getTeamOne()
+	{
+		return this.inputTeamOne;
+	}
+	
+	public String getTeamTwo()
+	{
+		return this.inputTeamTwo;
+	}
 
 }

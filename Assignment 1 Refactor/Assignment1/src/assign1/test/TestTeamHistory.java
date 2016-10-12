@@ -20,7 +20,7 @@ public class TestTeamHistory
 		statistics.process();
 	}
 	@Test
-	public void testNOTeamHistory()
+	public void testNOTeamStatistics()
 	{
 		
 		input2 = new Scanner("NO");
@@ -35,7 +35,7 @@ public class TestTeamHistory
 	}
 
 	@Test
-	public void testHOUTeamHistory()
+	public void testHOUTeamStatistics()
 	{
 		
 		input2 = new Scanner("HOU");
@@ -50,7 +50,7 @@ public class TestTeamHistory
 	}
 	
 	@Test
-	public void testSEATeamHistory()
+	public void testSEATeamStatistics()
 	{
 		
 		input2 = new Scanner("SEA");
@@ -65,7 +65,7 @@ public class TestTeamHistory
 	}
 	
 	@Test
-	public void testJACTeamHistory()
+	public void testJACTeamStatistics()
 	{
 		
 		input2 = new Scanner("JAC");
@@ -80,7 +80,7 @@ public class TestTeamHistory
 	}
 	
 	@Test
-	public void testBUFTeamHistory()
+	public void testBUFTeamStatistics()
 	{
 		
 		input2 = new Scanner("BUF");
