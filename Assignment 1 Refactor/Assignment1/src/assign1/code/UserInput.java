@@ -42,10 +42,7 @@ public class UserInput
 			
 		case getMatchupStatistics:
 			matchupStatistics = new MatchupStatistics(homeTeam,
-					awayTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway());
+					awayTeam, statistics);
 			matchupStatistics.getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			

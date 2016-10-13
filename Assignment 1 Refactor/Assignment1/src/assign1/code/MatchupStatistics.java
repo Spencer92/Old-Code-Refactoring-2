@@ -55,11 +55,15 @@ public class MatchupStatistics
 //
 	/***************************************************************************/
 	public MatchupStatistics(String inputTeamOne,
-			String inputTeamTwo, int totalLines, 
-			int[] homeScore, int[] awayScore,
-			String homeTeam[],
-			String[] awayTeam)
+			String inputTeamTwo, Statistics statistics)
 	{
+		
+		int totalLines = statistics.getTotalLines();
+		int homeScore[] = statistics.getHomeScore();
+		int awayScore[] = statistics.getAwayScore();
+		String homeTeam[] = statistics.getHome();
+		String awayTeam[] = statistics.getAway();
+		
 		this.teamOneExists = false;
 		this.teamTwoExists = false;
 		this.teamTwoWins = 0;
