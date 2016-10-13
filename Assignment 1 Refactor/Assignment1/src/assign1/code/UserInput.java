@@ -154,14 +154,5 @@ public class UserInput
 		}
 	}
 */	
-	public TeamHistory getTeamHistoryRaw()
-	{
-		return this.teamHistory;
-	}
-	
-	public MatchupStatistics getMatchupStatisticsRaw()
-	{
-		return this.matchupStatistics;
-	}
 
 }
