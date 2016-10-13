@@ -89,8 +89,8 @@ public class Football
 			userInput2 = new Scanner(System.in);
 			userInput3 = new Scanner(System.in);
 			input = userInput1.next();
-			options = new UserInput();
-			options.start(input, statistics, userInput2, userInput3);
+			options = new UserInput(input, statistics, userInput2, userInput3);
+			options.start();
 			
 			
 		}

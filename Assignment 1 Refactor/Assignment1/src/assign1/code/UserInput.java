@@ -8,9 +8,21 @@ public class UserInput
 	private TeamHistory teamHistory;
 	private MatchupStatistics matchupStatistics;
 	private MatchupHistory matchupHistory;
-
+	private String input;
+	private Statistics statistics;
+	private Scanner userInput2;
+	private Scanner userInput3;
 	
-	public void start(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
+	public UserInput(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
+	{
+		setInput(input);
+		setStatistics(statistics);
+		setUserInput2(userInput2);
+		setUserInput3(userInput3);
+	}
+	
+	
+	public void start()
 	{
 		final String teamStatistics = "T";
 		final String getMatchupStatistics = "M";
@@ -27,7 +39,7 @@ public class UserInput
 		MatchupHistory matchupHistory;
 
 		
-		switch (input)
+		switch (getInput())
 		{
 		case teamStatistics:
 			
@@ -41,8 +53,7 @@ public class UserInput
 			
 			
 		case getMatchupStatistics:
-			matchupStatistics = new MatchupStatistics(homeTeam,
-					awayTeam, statistics);
+			matchupStatistics = new MatchupStatistics(homeTeam,awayTeam, statistics);
 			matchupStatistics.getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
@@ -78,8 +89,48 @@ public class UserInput
 		
 	}
 	
+	private void setInput(String input)
+	{
+		this.input = input;
+	}
+	
+	private String getInput()
+	{
+		return this.input;
+	} 
+	
+	private Statistics getStatistics()
+	{
+		return this.statistics;
+	}
+	
+	private void setStatistics(Statistics statistics)
+	{
+		this.statistics = statistics;
+	}
 
-/*	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
+
+	private Scanner getUserInput2() {
+		return userInput2;
+	}
+
+
+	private void setUserInput2(Scanner userInput2) {
+		this.userInput2 = userInput2;
+	}
+
+
+	private Scanner getUserInput3() {
+		return userInput3;
+	}
+
+
+	private void setUserInput3(Scanner userInput3) {
+		this.userInput3 = userInput3;
+	}
+
+
+	/*	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
 	{
 		System.out.print("Please Enter a team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
