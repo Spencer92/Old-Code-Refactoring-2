@@ -59,8 +59,7 @@ public class UserInput
 			
 			
 		case showMatchupHistory:
-			matchupHistory = new MatchupHistory(homeTeam,
-					awayTeam, statistics);
+			matchupHistory = new MatchupHistory(homeTeam, awayTeam, statistics);
 			matchupHistory.showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			

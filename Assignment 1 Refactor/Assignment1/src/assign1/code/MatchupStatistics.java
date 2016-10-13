@@ -17,7 +17,7 @@ package assign1.code;
 
 import java.util.Scanner;
 
-public class MatchupStatistics 
+public class MatchupStatistics extends Options
 {
 	private boolean teamOneExists;
 	private boolean teamTwoExists;
@@ -182,6 +182,12 @@ public class MatchupStatistics
 
 	public int getTies() {
 		return ties;
+	}
+
+	@Override
+	String getOption() 
+	{
+		return "M";
 	}
 
 }

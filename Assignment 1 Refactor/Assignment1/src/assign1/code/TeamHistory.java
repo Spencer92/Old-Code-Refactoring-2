@@ -16,7 +16,7 @@ package assign1.code;
 
 import java.util.Scanner;
 
-public class TeamHistory
+public class TeamHistory extends Options
 {
 	private int wins;
 	private int losses;
@@ -180,5 +180,12 @@ public class TeamHistory
 
 	public double getWinPercentage() {
 		return winPercentage;
+	}
+
+
+	@Override
+	String getOption() 
+	{
+		return "T";
 	}
 }

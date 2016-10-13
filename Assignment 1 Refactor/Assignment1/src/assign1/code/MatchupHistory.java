@@ -22,7 +22,7 @@ package assign1.code;
 
 import java.util.Scanner;
 
-public class MatchupHistory 
+public class MatchupHistory extends Options
 {
 	
 	private boolean teamOneExists;
@@ -277,6 +277,12 @@ public class MatchupHistory
 	public MatchupHistory getMatchupHistoryRaw()
 	{
 		return this;
+	}
+
+	@Override
+	String getOption() 
+	{
+		return "H";
 	}
 
 }
