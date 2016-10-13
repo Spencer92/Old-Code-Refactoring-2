@@ -31,10 +31,7 @@ public class UserInput
 		{
 		case teamStatistics:
 			
-			teamHistory = new TeamHistory(homeTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway());
+			teamHistory = new TeamHistory(homeTeam, statistics);
 			teamHistory.getTeamHistory(statistics, userInput2, homeTeam);
 
 			//check to see if the team the user entered is in the database,

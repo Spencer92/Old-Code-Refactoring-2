@@ -50,10 +50,7 @@ public class TeamHistory
 //							and the percentage of wins.
 		/***************************************************************************/
 	
-	public TeamHistory(String inputTeam, int totalLines, 
-						int[] homeScore, int[] awayScore,
-						String homeTeam[],
-						String[] awayTeam)
+	public TeamHistory(String inputTeam, Statistics statistics)
 	{
 		int counter;
 		
@@ -65,6 +62,13 @@ public class TeamHistory
 		double winsDouble;
 		double lossesDouble;
 		double tiesDouble;
+		int totalLines = statistics.getTotalLines();
+		int homeScore[] = statistics.getHomeScore();
+		int awayScore[] = statistics.getAwayScore();
+		String homeTeam[] = statistics.getHome();
+		String awayTeam[] = statistics.getAway();
+		
+		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{

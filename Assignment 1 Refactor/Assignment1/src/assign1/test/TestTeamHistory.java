@@ -24,10 +24,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("NO");
-		team = new TeamHistory("NO", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());
+		team = new TeamHistory("NO", statistics);
 		assertEquals(team.getWins(),324);
 		assertEquals(team.getLosses(),409);
 		assertEquals(team.getTies(),5);
@@ -41,10 +38,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("HOU");
-		team = new TeamHistory("HOU", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());
+		team = new TeamHistory("HOU", statistics);
 		assertEquals(team.getWins(),81);
 		assertEquals(team.getLosses(),115);
 		assertEquals(team.getTies(),0);
@@ -58,10 +52,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("SEA");
-		team = new TeamHistory("SEA", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());
+		team = new TeamHistory("SEA", statistics);
 		assertEquals(team.getWins(),305);
 		assertEquals(team.getLosses(),315);
 		assertEquals(team.getTies(),0);
@@ -75,10 +66,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("JAC");
-		team = new TeamHistory("JAC", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());
+		team = new TeamHistory("JAC", statistics);
 		assertEquals(team.getWins(),149);
 		assertEquals(team.getLosses(),166);
 		assertEquals(team.getTies(),0);
@@ -92,10 +80,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("BUF");
-		team = new TeamHistory("BUF", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());
+		team = new TeamHistory("BUF", statistics);
 		assertEquals(team.getWins(),323);
 		assertEquals(team.getLosses(),380);
 		assertEquals(team.getTies(),2);
