@@ -31,7 +31,11 @@ public class UserInput
 		{
 		case teamStatistics:
 			
-			getTeamHistory(statistics, userInput2, homeTeam);
+			teamHistory = new TeamHistory(homeTeam, statistics.getTotalLines(), 
+					statistics.getHomeScore(), statistics.getAwayScore(),
+					statistics.getHome(),
+					statistics.getAway());
+			teamHistory.getTeamHistory(statistics, userInput2, homeTeam);
 
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
@@ -85,7 +89,7 @@ public class UserInput
 	}
 	
 
-	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
+/*	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
 	{
 		System.out.print("Please Enter a team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
@@ -109,7 +113,7 @@ public class UserInput
 			System.out.println(team + " is not a valid team name");
 		}
 	}
-	
+*/	
 	public TeamHistory getTeamHistoryRaw()
 	{
 		return this.teamHistory;

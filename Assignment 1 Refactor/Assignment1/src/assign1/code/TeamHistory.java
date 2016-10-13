@@ -14,6 +14,8 @@
 /***************************************************************************/
 package assign1.code;
 
+import java.util.Scanner;
+
 public class TeamHistory
 {
 	private int wins;
@@ -126,6 +128,32 @@ public class TeamHistory
 		}
 	}
 
+	
+	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
+	{
+		System.out.print("Please Enter a team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		team = input.next();
+		
+/*		teamHistory = new TeamHistory(team, statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway());*/
+		if(isTeamExists())
+		{
+			System.out.println("Stats for " + team + ":");
+			System.out.println("Wins:\t\t" + getWins());
+			System.out.println("Losses:\t\t" + getLosses());
+			System.out.println("Ties:\t\t" + getTies());
+			System.out.println("Most Points:\t" + getMostPoints());
+			System.out.println("Win percentage:\t" + (int)getWinPercentage() + "%");
+		}
+		else
+		{
+			System.out.println(team + " is not a valid team name");
+		}
+	}
+	
 	
 	//Getters and Setters
 	public int getWins() {
