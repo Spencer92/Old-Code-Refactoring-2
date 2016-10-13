@@ -46,7 +46,13 @@ public class UserInput
 			
 			
 		case showMatchupHistory:
-			showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			matchupHistory = new MatchupHistory(homeTeam,
+					awayTeam, statistics.getTotalLines(), 
+					statistics.getHomeScore(), statistics.getAwayScore(),
+					statistics.getHome(),
+					statistics.getAway(), statistics.getYear(),
+					statistics.getWeek());
+			matchupHistory.showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 		case quit:
@@ -152,7 +158,7 @@ public class UserInput
 		}
 	}
 	
-	public void showMatchupHistory(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
+/*	public void showMatchupHistory(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 			String firstTeam, String secondTeam)
 	{
 		int counter;
@@ -220,13 +226,13 @@ public class UserInput
 			{
 				System.out.println(matchupHistory.getTeamDisplayTwo()[counter]);
 			}
-			*/
+			
 			//if the team names are valid, display the history between the two teams
 			//otherwise if one or more of the teams don't exist notify the user and
 			//return to the menu
 		}
 	}
-	
+	*/
 	public TeamHistory getTeamHistoryRaw()
 	{
 		return this.teamHistory;
@@ -236,10 +242,10 @@ public class UserInput
 	{
 		return this.matchupStatistics;
 	}
-	
+/*	
 	public MatchupHistory getMatchupHistoryRaw()
 	{
 		return this.matchupHistory;
 	}
-	
+	*/
 }

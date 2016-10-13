@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class TestMatchupHistory 
 {
 	Statistics statistics;
-	UserInput userInput = new UserInput();
+	MatchupHistory history;
 	Scanner input1;
 	Scanner input2;
 	Scanner input3;
@@ -26,8 +26,13 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("NO");
 		input2 = new Scanner("HOU");
-		userInput.showMatchupHistory(statistics, input1, input2, null, null);
-		MatchupHistory history = userInput.getMatchupHistoryRaw();
+		history = new MatchupHistory("NO",
+				"HOU", statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway(), statistics.getYear(),
+				statistics.getWeek());
+		history.showMatchupHistory(statistics, input1, input2, null, null);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -46,8 +51,13 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("HOU");
 		input2 = new Scanner("SEA");
-		userInput.showMatchupHistory(statistics, input1, input2, null, null);
-		MatchupHistory history = userInput.getMatchupHistoryRaw();
+		history = new MatchupHistory("HOU",
+				"SEA", statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway(), statistics.getYear(),
+				statistics.getWeek());
+//		MatchupHistory history = userInput.getMatchupHistoryRaw();
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -55,22 +65,26 @@ public class TestMatchupHistory
 				"2009 14\t  SEA  7 \t  HOU \t34",
 		"2013 4\t  SEA  23 \t  HOU \t20"},teamOne);
 		
-//		assertArrayEquals(new String[]{
-//		"2005 6\t  HOU  10 \t  SEA \t42"},teamTwo);
+
 
 		assertArrayEquals(new String[]{
 		"2005 6	  HOU  10 	  SEA 	42"},teamTwo);
 		
 		
 	}
+
 	
 	@Test
 	public void testSEAVSJACmatchupHistory()
 	{
 		input1 = new Scanner("SEA");
 		input2 = new Scanner("JAC");
-		userInput.showMatchupHistory(statistics, input1, input2, null, null);
-		MatchupHistory history = userInput.getMatchupHistoryRaw();
+		history = new MatchupHistory("SEA",
+				"JAC", statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway(), statistics.getYear(),
+				statistics.getWeek());
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -93,8 +107,12 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("JAC");
 		input2 = new Scanner("BUF");
-		userInput.showMatchupHistory(statistics, input1, input2, null, null);
-		MatchupHistory history = userInput.getMatchupHistoryRaw();
+		history = new MatchupHistory("JAC",
+				"BUF", statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway(), statistics.getYear(),
+				statistics.getWeek());
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		

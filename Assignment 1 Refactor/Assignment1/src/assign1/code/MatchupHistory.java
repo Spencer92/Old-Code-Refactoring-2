@@ -20,6 +20,8 @@
 
 package assign1.code;
 
+import java.util.Scanner;
+
 public class MatchupHistory 
 {
 	
@@ -143,7 +145,81 @@ public class MatchupHistory
 		}
 	}
 	
-
+	public void showMatchupHistory(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
+			String firstTeam, String secondTeam)
+	{
+		int counter;
+		int counterFirstTeam = 0;
+		int counterSecondTeam = 0;
+		System.out.print("Please enter the home team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		firstTeam = firstTeamInput.next();
+		System.out.print("Please enter the away team (in all caps): ");
+//		userInput3 = new Scanner(System.in);
+		secondTeam = secondTeamInput.next();
+		
+/*		matchupHistory = new MatchupHistory(firstTeam,
+				secondTeam, statistics.getTotalLines(), 
+				statistics.getHomeScore(), statistics.getAwayScore(),
+				statistics.getHome(),
+				statistics.getAway(), statistics.getYear(),
+				statistics.getWeek());*/
+		if(!isTeamOneExists())
+		{
+			System.out.println(firstTeam + " is not a valid team name");
+		}
+		else if(!isTeamTwoExists())
+		{
+			System.out.println(secondTeam + " is not a valid team name");
+		}
+		else
+		{
+			System.out.println("History of " + firstTeam + " VS " + secondTeam);
+			System.out.println("Year Week Away Away Score Home Home Score");
+			System.out.println("-----------------------------------------");
+			for(counter = 0; counter < getMatchesOne() + getMatchesTwo(); counter++)
+			{
+				if(counterFirstTeam < getMatchesOne() && counterSecondTeam < getMatchesTwo()
+						&& getTeamOne().equals(firstTeam)
+						&& getYearTeamOne()[counterFirstTeam] <= 
+						getYearTeamTwo()[counterSecondTeam])
+				{
+					System.out.println(getTeamDisplayOne()[counterFirstTeam]);
+					counterFirstTeam++;
+				}
+				else if(counterSecondTeam < getMatchesTwo() && counterFirstTeam < getMatchesOne()
+						&& getTeamTwo().equals(secondTeam)
+						&& getYearTeamTwo()[counterSecondTeam] < getYearTeamOne()[counterFirstTeam] )
+				{
+					System.out.println(getTeamDisplayTwo()[counterSecondTeam]);
+					counterSecondTeam++;
+				}
+				else if(counterFirstTeam >= getMatchesOne() && counterSecondTeam < getMatchesTwo())
+				{
+					System.out.println(getTeamDisplayTwo()[counterSecondTeam]);
+					counterSecondTeam++;					
+				}
+				else if(counterSecondTeam >= getMatchesTwo() && counterFirstTeam < getMatchesOne())
+				{
+					System.out.println(getTeamDisplayOne()[counterFirstTeam]);
+					counterFirstTeam++;
+				}
+			}/*
+			for(counter = 0; counter < matchupHistory.getMatchesOne(); counter++)
+			{
+				System.out.println(matchupHistory.getTeamDisplayOne()[counter]);
+			}
+			for(counter = 0; counter < matchupHistory.getMatchesTwo(); counter++)
+			{
+				System.out.println(matchupHistory.getTeamDisplayTwo()[counter]);
+			}
+			*/
+			//if the team names are valid, display the history between the two teams
+			//otherwise if one or more of the teams don't exist notify the user and
+			//return to the menu
+		}
+	}
+	
 
 	//Getters and Setters
 	
@@ -192,6 +268,11 @@ public class MatchupHistory
 	public String getTeamTwo()
 	{
 		return this.inputTeamTwo;
+	}
+	
+	public MatchupHistory getMatchupHistoryRaw()
+	{
+		return this;
 	}
 
 }
