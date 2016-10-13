@@ -12,7 +12,19 @@ public class UserInput
 	private Statistics statistics;
 	private Scanner userInput2;
 	private Scanner userInput3;
+	private String homeTeam = null;
+	private String awayTeam = null;
 	
+	public String getHomeTeam() {
+		return homeTeam;
+	}
+
+
+	public String getAwayTeam() {
+		return awayTeam;
+	}
+
+
 	public UserInput(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
 	{
 		setInput(input);
@@ -24,12 +36,13 @@ public class UserInput
 	
 	public void start()
 	{
-		final String teamStatistics = "T";
+		options.start(this);
+/*		final String teamStatistics = "T";
 		final String getMatchupStatistics = "M";
 		final String showMatchupHistory = "H";
 		final String quit = "Q";
-		String homeTeam = null;
-		String awayTeam = null;
+//		String homeTeam = null;
+//		String awayTeam = null;
 		int counter;
 		Scanner userInput1;
 //		Scanner userInput2;
@@ -73,7 +86,7 @@ public class UserInput
 		default:
 			System.out.println("Invalid input, please try again!");
 			break;
-		}
+		}*/
 	}
 	
 	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
@@ -119,7 +132,7 @@ public class UserInput
 		return this.input;
 	} 
 	
-	private Statistics getStatistics()
+	public Statistics getStatistics()
 	{
 		return this.statistics;
 	}
