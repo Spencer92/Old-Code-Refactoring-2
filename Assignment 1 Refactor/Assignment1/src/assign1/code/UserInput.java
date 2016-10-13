@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UserInput 
 {
-
+	private Options options;
 	private TeamHistory teamHistory;
 	private MatchupStatistics matchupStatistics;
 	private MatchupHistory matchupHistory;
@@ -43,8 +43,8 @@ public class UserInput
 		{
 		case teamStatistics:
 			
-			teamHistory = new TeamHistory(homeTeam, statistics);
-			teamHistory.getTeamHistory(statistics, userInput2, homeTeam);
+			options = new TeamHistory(homeTeam, statistics);
+			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
@@ -53,14 +53,14 @@ public class UserInput
 			
 			
 		case getMatchupStatistics:
-			matchupStatistics = new MatchupStatistics(homeTeam,awayTeam, statistics);
-			matchupStatistics.getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			options = new MatchupStatistics(homeTeam,awayTeam, statistics);
+			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 			
 		case showMatchupHistory:
-			matchupHistory = new MatchupHistory(homeTeam, awayTeam, statistics);
-			matchupHistory.showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			options = new MatchupHistory(homeTeam, awayTeam, statistics);
+			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 		case quit:

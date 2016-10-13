@@ -149,7 +149,8 @@ public class MatchupHistory extends Options
 		}
 	}
 	
-	public void showMatchupHistory(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
+	@Override
+	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 			String firstTeam, String secondTeam)
 	{
 		int counter;

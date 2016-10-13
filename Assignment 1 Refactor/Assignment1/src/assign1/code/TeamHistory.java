@@ -132,12 +132,13 @@ public class TeamHistory extends Options
 		}
 	}
 
-	
-	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
+	@Override
+	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
+								String firstTeam, String secondTeam) 
 	{
 		System.out.print("Please Enter a team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
-		team = input.next();
+		firstTeam = firstTeamInput.next();
 		
 /*		teamHistory = new TeamHistory(team, statistics.getTotalLines(), 
 				statistics.getHomeScore(), statistics.getAwayScore(),
@@ -145,7 +146,7 @@ public class TeamHistory extends Options
 				statistics.getAway());*/
 		if(isTeamExists())
 		{
-			System.out.println("Stats for " + team + ":");
+			System.out.println("Stats for " + firstTeam + ":");
 			System.out.println("Wins:\t\t" + getWins());
 			System.out.println("Losses:\t\t" + getLosses());
 			System.out.println("Ties:\t\t" + getTies());
@@ -154,7 +155,7 @@ public class TeamHistory extends Options
 		}
 		else
 		{
-			System.out.println(team + " is not a valid team name");
+			System.out.println(firstTeam + " is not a valid team name");
 		}
 	}
 	

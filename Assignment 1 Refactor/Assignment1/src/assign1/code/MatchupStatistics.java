@@ -106,17 +106,18 @@ public class MatchupStatistics extends Options
 		
 	}
 
-	public void getMatchupStatistics(Statistics statistics, Scanner teamOneInput, Scanner teamTwoInput,
-			String teamOne, String teamTwo)
+	@Override
+	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
+			String firstTeam, String secondTeam)
 	{
 //		userInput2 = new Scanner(System.in);
 //		userInput3 = new Scanner(System.in);
 		System.out.print("Please enter first team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
-		teamOne = teamOneInput.next();
+		firstTeam = firstTeamInput.next();
 		System.out.print("Please enter second team (in all caps): ");
 //		userInput3 = new Scanner(System.in);
-		teamTwo = teamTwoInput.next();
+		secondTeam = secondTeamInput.next();
 		
 		
 /*		matchupStatistics = new MatchupStatistics(teamOne,
@@ -128,16 +129,16 @@ public class MatchupStatistics extends Options
 				&& getGamesPlayed() != 0)
 		{
 			System.out.println("Games Played:\t" + getGamesPlayed());
-			System.out.println(teamOne + " Won:\t" + getTeamOneWins());
-			System.out.println(teamTwo + " Won:\t" + getTeamTwoWins());
+			System.out.println(firstTeam + " Won:\t" + getTeamOneWins());
+			System.out.println(secondTeam + " Won:\t" + getTeamTwoWins());
 			System.out.println("Ties:\t\t" + getTies());
 			if(getTeamOneWins() > getTeamTwoWins())
 			{
-				System.out.println("Matchup favours " + teamOne);
+				System.out.println("Matchup favours " + firstTeam);
 			}
 			else if(getTeamOneWins() < getTeamTwoWins())
 			{
-				System.out.println("Matchup favours " + teamTwo);
+				System.out.println("Matchup favours " + secondTeam);
 			}
 			else
 			{
@@ -147,15 +148,15 @@ public class MatchupStatistics extends Options
 		}
 		else if(!isTeamOneExists())
 		{
-			System.out.println(teamOne + " is not a valid team name");
+			System.out.println(firstTeam + " is not a valid team name");
 		}
 		else if(!isTeamTwoExists())
 		{
-			System.out.println(teamTwo + " is not a valid team name");
+			System.out.println(secondTeam + " is not a valid team name");
 		}
 		else if(getGamesPlayed() == 0)
 		{
-			System.out.println(teamOne + " and " + teamTwo + " have never faced each other");
+			System.out.println(firstTeam + " and " + secondTeam + " have never faced each other");
 		}
 	}
 	

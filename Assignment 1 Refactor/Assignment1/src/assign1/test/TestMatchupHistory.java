@@ -28,7 +28,7 @@ public class TestMatchupHistory
 		input2 = new Scanner("HOU");
 		history = new MatchupHistory("NO",
 				"HOU", statistics);
-		history.showMatchupHistory(statistics, input1, input2, null, null);
+		history.getInformation(statistics, input1, input2, null, null);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
