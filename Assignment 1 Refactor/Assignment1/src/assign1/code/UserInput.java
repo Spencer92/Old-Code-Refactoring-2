@@ -41,7 +41,7 @@ public class UserInput
 		
 		switch (getInput())
 		{
-		case teamStatistics:
+		case Options.TEAM_HISTORY:
 			
 			options = new TeamHistory(homeTeam, statistics);
 			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
@@ -52,18 +52,18 @@ public class UserInput
 			break;
 			
 			
-		case getMatchupStatistics:
+		case Options.MATCHUP_STATISTICS:
 			options = new MatchupStatistics(homeTeam,awayTeam, statistics);
 			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 			
-		case showMatchupHistory:
+		case Options.MATCHUP_HISTORY:
 			options = new MatchupHistory(homeTeam, awayTeam, statistics);
 			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
-		case quit:
+		case Options.QUIT:
 			quit();
 
 			
