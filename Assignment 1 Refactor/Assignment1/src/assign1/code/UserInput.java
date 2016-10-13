@@ -40,8 +40,12 @@ public class UserInput
 			
 			
 		case getMatchupStatistics:
-
-			getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			matchupStatistics = new MatchupStatistics(homeTeam,
+					awayTeam, statistics.getTotalLines(), 
+					statistics.getHomeScore(), statistics.getAwayScore(),
+					statistics.getHome(),
+					statistics.getAway());
+			matchupStatistics.getMatchupStatistics(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 			
@@ -80,7 +84,7 @@ public class UserInput
 		
 	}
 	
-	public void getMatchupStatistics(Statistics statistics, Scanner teamOneInput, Scanner teamTwoInput,
+/*	public void getMatchupStatistics(Statistics statistics, Scanner teamOneInput, Scanner teamTwoInput,
 			String teamOne, String teamTwo)
 	{
 //		userInput2 = new Scanner(System.in);
@@ -132,7 +136,7 @@ public class UserInput
 			System.out.println(teamOne + " and " + teamTwo + " have never faced each other");
 		}
 	}
-	
+*/	
 	public void getTeamHistory(Statistics statistics, Scanner input,String team) 
 	{
 		System.out.print("Please Enter a team (in all caps): ");
@@ -167,10 +171,5 @@ public class UserInput
 	{
 		return this.matchupStatistics;
 	}
-/*	
-	public MatchupHistory getMatchupHistoryRaw()
-	{
-		return this.matchupHistory;
-	}
-	*/
+
 }
