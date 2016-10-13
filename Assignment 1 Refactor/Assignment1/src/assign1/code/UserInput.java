@@ -43,8 +43,9 @@ public class UserInput
 		{
 		case Options.TEAM_HISTORY:
 			
-			options = new TeamHistory(homeTeam, statistics);
-			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			getOptionTeamHistory(homeTeam, statistics);
+//			options = new TeamHistory(homeTeam, statistics);
+//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
@@ -53,14 +54,16 @@ public class UserInput
 			
 			
 		case Options.MATCHUP_STATISTICS:
-			options = new MatchupStatistics(homeTeam,awayTeam, statistics);
-			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			getOptionMatchupStatistics(homeTeam, awayTeam, statistics);
+//			options = new MatchupStatistics(homeTeam,awayTeam, statistics);
+//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 			
 		case Options.MATCHUP_HISTORY:
-			options = new MatchupHistory(homeTeam, awayTeam, statistics);
-			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+			getOptionMatchupHistory(homeTeam, awayTeam, statistics);
+//			options = new MatchupHistory(homeTeam, awayTeam, statistics);
+//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
 		case Options.QUIT:
@@ -71,6 +74,24 @@ public class UserInput
 			System.out.println("Invalid input, please try again!");
 			break;
 		}
+	}
+	
+	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
+	{
+		options = new TeamHistory(homeTeam, statistics);
+		options.getInformation(statistics, userInput2, userInput3, homeTeam, null);
+	}
+	
+	public void getOptionMatchupStatistics(String homeTeam,String awayTeam,Statistics statistics)
+	{
+		options = new MatchupStatistics(homeTeam,awayTeam, statistics);
+		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+	}
+	
+	public void getOptionMatchupHistory(String homeTeam, String awayTeam, Statistics statistics)
+	{
+		options = new MatchupHistory(homeTeam, awayTeam, statistics);
+		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 	}
 	
 	public void quit()
