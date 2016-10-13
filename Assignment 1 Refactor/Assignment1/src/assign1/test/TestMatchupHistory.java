@@ -27,11 +27,7 @@ public class TestMatchupHistory
 		input1 = new Scanner("NO");
 		input2 = new Scanner("HOU");
 		history = new MatchupHistory("NO",
-				"HOU", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway(), statistics.getYear(),
-				statistics.getWeek());
+				"HOU", statistics);
 		history.showMatchupHistory(statistics, input1, input2, null, null);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
@@ -52,11 +48,7 @@ public class TestMatchupHistory
 		input1 = new Scanner("HOU");
 		input2 = new Scanner("SEA");
 		history = new MatchupHistory("HOU",
-				"SEA", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway(), statistics.getYear(),
-				statistics.getWeek());
+				"SEA", statistics);
 //		MatchupHistory history = userInput.getMatchupHistoryRaw();
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
@@ -80,11 +72,7 @@ public class TestMatchupHistory
 		input1 = new Scanner("SEA");
 		input2 = new Scanner("JAC");
 		history = new MatchupHistory("SEA",
-				"JAC", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway(), statistics.getYear(),
-				statistics.getWeek());
+				"JAC", statistics);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -108,11 +96,7 @@ public class TestMatchupHistory
 		input1 = new Scanner("JAC");
 		input2 = new Scanner("BUF");
 		history = new MatchupHistory("JAC",
-				"BUF", statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway(), statistics.getYear(),
-				statistics.getWeek());
+				"BUF", statistics);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		

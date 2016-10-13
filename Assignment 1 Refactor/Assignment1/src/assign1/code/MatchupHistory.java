@@ -72,21 +72,25 @@ public class MatchupHistory
 
 
 	public MatchupHistory(String inputTeamOne,
-			String inputTeamTwo, int totalLines, 
-			int[] homeScore, int[] awayScore,
-			String homeTeam[],
-			String[] awayTeam, int[] year,
-			String[] week)
+			String inputTeamTwo, Statistics statistics)
 	{
 		int counter;
 		int matchCounterOne = 0;
 		int matchCounterTwo = 0;
+		int totalLines = statistics.getTotalLines();
+		int homeScore[] = statistics.getHomeScore();
+		int awayScore[] = statistics.getAwayScore();
+		int year[] = statistics.getYear();
+		String week[] = statistics.getWeek();
+		String homeTeam[] = statistics.getHome();
+		String awayTeam[] = statistics.getAway();
 		this.teamOneExists = false;
 		this.teamTwoExists = false;
 		this.matchesOne = 0;
 		this.matchesTwo = 0;
 		this.inputTeamOne = inputTeamOne;
 		this.inputTeamTwo = inputTeamTwo;
+		
 		
 		
 		for(counter = 0; counter < totalLines; counter++)

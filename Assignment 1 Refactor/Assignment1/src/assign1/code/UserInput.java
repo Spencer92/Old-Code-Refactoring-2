@@ -52,11 +52,7 @@ public class UserInput
 			
 		case showMatchupHistory:
 			matchupHistory = new MatchupHistory(homeTeam,
-					awayTeam, statistics.getTotalLines(), 
-					statistics.getHomeScore(), statistics.getAwayScore(),
-					statistics.getHome(),
-					statistics.getAway(), statistics.getYear(),
-					statistics.getWeek());
+					awayTeam, statistics);
 			matchupHistory.showMatchupHistory(statistics, userInput2, userInput3, homeTeam, awayTeam);
 			break;
 			
