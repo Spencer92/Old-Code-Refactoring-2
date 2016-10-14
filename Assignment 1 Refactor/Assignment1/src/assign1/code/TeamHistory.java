@@ -33,12 +33,10 @@ public class TeamHistory extends Options
 *Purpose:         Take two previously defined teams
 *							and show the match history between them
 *
-*Input Arguments: 			inputTeam	: a previously defined team for comparison
-*							totalLines  	: the total amount of matches spanning the years
-*							homeScore	 	: the score of the home team
-*							awayScore		: the score of the away team
-*							homeTeam		: a random home team from the list of all matches	
-*							awayTeam		: a random away team from the list of all matches
+*Input Arguments: 			teamInput	: a user defined team that will be checked for its
+*										  statistics
+*							statistics	: The entire statistics of the football history
+*							
 *
 *
 *Method Notes:    
@@ -135,28 +133,22 @@ public class TeamHistory extends Options
 	}
 
 	
-	/*Class Name:   		getInformation
+	/*Method Name:   		getInformation
 	*
 	*Purpose:         		Displays the information of the team to the screen
 	*
 	*
 	*
-	*Input Arguments: 			inputTeam	: a previously defined team for comparison
-	*							totalLines  	: the total amount of matches spanning the years
-	*							homeScore	 	: the score of the home team
-	*							awayScore		: the score of the away team
-	*							homeTeam		: a random home team from the list of all matches	
-	*							awayTeam		: a random away team from the list of all matches
+	*Input Arguments: 			statistics	: The statistics of all the matches
+	*							firstTeam	: The team that the user wants the information
+	*										  from
+	*							secondTeam	: unused but required due to it overriding another method
 	*
 	*
 	*Method Notes:    
-	*							The class starts by setting the parameters needed in
-	*							case teamInput doesn't have a valid team name
-	*							Once the parameters are set, the class checks to see if
-	*							the team being checked actually exists.
-	*							If that's determined then the class checks and looks
-	*							at the total wins, losses, ties, the most points,
-	*							and the percentage of wins.
+	*							Displays the team statistics to the user if the
+	*							team exists. A notification is displayed if the
+	*							team doesn't exist.
 	**/
 	/***************************************************************************/	
 	

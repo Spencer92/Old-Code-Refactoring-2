@@ -9,6 +9,17 @@ import assign1.code.*;
 
 public class TestTeamHistory 
 {
+	
+	/*Method Name:   			TestTeamHistory
+	*
+	*Purpose:         			To test the TeamHistory class
+	*
+	*Method Notes:
+	*							Checks the wins, losses, ties, most points in a game,
+	*							and the win percentage 
+	*
+	**/
+	/***************************************************************************/	
 	Statistics statistics;
 	TeamHistory team;
 	Scanner input1;

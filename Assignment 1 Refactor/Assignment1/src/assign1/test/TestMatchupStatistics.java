@@ -13,6 +13,21 @@ import assign1.code.UserInput;
 
 public class TestMatchupStatistics 
 {
+	
+	/*Method Name:   			TestMatchupStatistics
+	*
+	*Purpose:         			To test the MatchupStatistics class
+	*
+	*
+	*Method notes:
+	*							Tests the games played, first team wins,
+	*							second team wins, and ties.
+	*
+	**/
+	
+	
+	
+	
 	Statistics statistics;
 	MatchupStatistics matchupStatistics;
 	Scanner input1;

@@ -13,6 +13,10 @@ public abstract class Options
 	abstract String getOption();
 	abstract void getInformation(Statistics statistics, String firstTeam, String SecondTeam);
 	
+	
+	
+	//A step for replace conditional with polymorphism,
+	//currently unused
 	public void start(UserInput input)
 	{
 

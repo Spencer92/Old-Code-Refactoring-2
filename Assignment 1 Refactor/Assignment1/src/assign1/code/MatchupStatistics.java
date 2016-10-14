@@ -31,23 +31,18 @@ public class MatchupStatistics extends Options
 	private String secondTeam;
 	
 	
-/*Class Name:   	MatchupStatistics
+/*Class Name:   		MatchupStatistics
 *
-*Purpose:         Take two previously defined teams
+*Purpose:         		Take two previously defined teams
 *						and show the match history between them
 *
-*Input Arguments: 		inputTeamOne	: a previously defined team for comparison
-*						inputTeamTwo	: a previously defined team for comparison 
-*						totalLines  	: the total amount of matches spanning the years
-*						homeScore	 	: the score of the home team
-*						awayScore		: the score of the away team
-*						homeTeam		: a random home team from the list of all matches	
-*						awayTeam		: a random away team from the list of all matches
-*
+*Input Arguments: 		firstTeamInput	: a previously defined team for comparison
+*						secondTeamInput	: a previously defined team for comparison
+*						statistics		: the statistics of all the matches in the football league
 *
 *Method Notes:    
 *						The class starts by setting the parameters needed in
-*						case inputTeamOne or inputTeamTwo don't have
+*						case the first team or the second team don't have
 *						valid team names
 *						Once the parameters are set, the class checks to see if
 *						the teams being checked actually exist.
@@ -124,11 +119,32 @@ public class MatchupStatistics extends Options
 					this.ties++;
 				}
 				this.gamesPlayed++;
+				//find out which team beat which, and add the appropriate win to the correct
+				//team				
 			}
 		}
 		
 	}
 
+	
+	/*Class Name:   		getInformation
+	*
+	*Purpose:         		Take two previously defined teams
+	*						and show the match history between them
+	*
+	*Input Arguments: 		statistics		: the statistics of all the matches in the football league
+	*						firstTeam		: The first user selected team
+	*						secondTeam		: The second user selected team
+	*
+	*Method Notes:    
+	*						The existence of the two teams are checked, and
+	*						if they do exist the information of their history will
+	*						be displayed. There will be a notification if one of 
+	*						the teams do not exist.
+	*/
+		/***************************************************************************/
+	
+	
 	@Override
 	public void getInformation(Statistics statistics, String firstTeam, String secondTeam)
 	{

@@ -9,11 +9,24 @@ import static org.junit.Assert.*;
 
 public class TestMatchupHistory 
 {
+	/*Method Name:   			TestMatchupHistory
+	*
+	*Purpose:         			To test the MatchupHistory class
+	*
+	*Method Notes:
+	*							The test compares what the output is, to 
+	*							what it should be
+	*
+	**/
+
+	
+	
 	Statistics statistics;
 	MatchupHistory history;
 	Scanner input1;
 	Scanner input2;
 	Scanner input3;
+	
 	
 	public TestMatchupHistory()
 	{

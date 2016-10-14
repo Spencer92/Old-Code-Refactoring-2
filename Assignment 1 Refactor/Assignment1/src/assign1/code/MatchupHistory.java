@@ -142,11 +142,38 @@ public class MatchupHistory extends Options
 							secondTeam + " \t" + Integer.toString(homeScore[counter]);
 					this.yearTeamTwo[matchCounterTwo] = year[counter];
 					matchCounterTwo++;
-					
+					//displays the history of the match for when the first team is away
+					//and the second team is home					
 				}
 			}
 		}
 	}
+	
+	/***************************************************************************/
+/* Class Name		: 	getInformation
+*
+* Purpose			:   Take two previously defined teams
+*						and show the match history between them
+*
+* Input Arguments	: 	inputTeamOne	: The first team a user asked about
+*						inputTeamTwo	: The second team that the user wanted to compare
+*										  the first team to. 
+*						statistics		: The statistics of all matches played
+*
+* Method Notes		:    
+*						The class starts by setting the parameters needed in
+*						case inputTeamOne or inputTeamTwo don't have
+*						valid team names
+*						Once the parameters are set, the class checks to see if
+*						the teams being checked actually exist.
+*						if that's determined then the amount of matches between the
+*						two teams are calculated
+*
+*						The class then looks at the history from the two teams (if
+*						they are valid) and store's them for later display
+*
+**/
+	/***************************************************************************/	
 	
 	@Override
 	public void getInformation(Statistics statistics, String teamOne, String teamTwo)
@@ -177,6 +204,9 @@ public class MatchupHistory extends Options
 				{
 					System.out.println(getTeamDisplayOne()[counterFirstTeam]);
 					counterFirstTeam++;
+					//If at the current year the first team was home and the second team is away,
+					//and it's the currently earliest match between them, then display the
+					//first team as home and the second team as away
 				}
 				else if(counterSecondTeam < getMatchesTwo() && counterFirstTeam < getMatchesOne()
 						&& getTeamTwo().equals(secondTeam)
@@ -184,16 +214,25 @@ public class MatchupHistory extends Options
 				{
 					System.out.println(getTeamDisplayTwo()[counterSecondTeam]);
 					counterSecondTeam++;
+					//If at the current year the second team was home and the first team is away,
+					//and it's the currently earliest match between them, then display the
+					//second team as home and the first team as away
+					
 				}
 				else if(counterFirstTeam >= getMatchesOne() && counterSecondTeam < getMatchesTwo())
 				{
 					System.out.println(getTeamDisplayTwo()[counterSecondTeam]);
-					counterSecondTeam++;					
+					counterSecondTeam++;	
+					//If there aren't any more matches where the first team was the home team
+					//finish writing the rest of the matches
 				}
 				else if(counterSecondTeam >= getMatchesTwo() && counterFirstTeam < getMatchesOne())
 				{
 					System.out.println(getTeamDisplayOne()[counterFirstTeam]);
 					counterFirstTeam++;
+					//If there aren't any more matches where the second team was the home team
+					//finish writing the rest of the matches
+					
 				}
 			}
 
@@ -204,6 +243,7 @@ public class MatchupHistory extends Options
 	}
 	
 
+	
 	//Getters and Setters
 	
 	public int[] getYearTeamOne() {
@@ -263,5 +303,7 @@ public class MatchupHistory extends Options
 	{
 		return "H";
 	}
+
+
 
 }

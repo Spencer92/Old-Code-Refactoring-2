@@ -12,25 +12,49 @@ public class UserInput
 	private String homeTeam = null;
 	private String awayTeam = null;
 	
-	public String getHomeTeam() {
-		return homeTeam;
-	}
 
-
-	public String getAwayTeam() {
-		return awayTeam;
-	}
-
-
-	public UserInput(String input, Statistics statistics, Scanner userInput2, Scanner userInput3)
+	/*Method Name:   			UserInput
+	*
+	*Purpose:         			Takes care of the user input
+	*
+	*
+	*
+	*Input Arguments: 			input				: The option that is wanted
+	*							statistics			: The statistics of every football match
+	*							userFirstTeamInput	: The first team that will be selected
+	*							userSecondTeamInput	: The second team that will be selected
+	*
+	**/
+	/***************************************************************************/	
+	public UserInput(String input, Statistics statistics, Scanner userFirstTeamInput, Scanner userSecondTeamInput)
 	{
 		setInput(input);
 		setStatistics(statistics);
-		setUserFirstTeamInput(userInput2);
-		setUserSecondTeamInput(userInput3);
+		setUserFirstTeamInput(userFirstTeamInput);
+		setUserSecondTeamInput(userSecondTeamInput);
 	}
 	
-	
+	/*Method Name:   			UserInput
+	*
+	*Purpose:         			Takes care of the user input
+	*
+	*
+	*
+	*Input Arguments: 			none
+	*
+	*
+	*Method Notes:
+	*							Selecting "T" gives the history of a specific team
+	*							Selecting "M" gives the statistics of two teams that
+	*							have faced each other
+	*							Selecting "H" gives the statistics of each individual 
+	*							match between each team
+	*							Selecting "Q" quits
+	*							Otherwise a notification that the input was wrong
+	*							is given.
+	*
+	**/
+	/***************************************************************************/	
 	public void start()
 	{
 
@@ -40,9 +64,7 @@ public class UserInput
 		case Options.TEAM_HISTORY:
 			
 			getOptionTeamHistory(homeTeam, statistics);
-			//check to see if the team the user entered is in the database,
-			//if so, display the statistics for the team,
-			//if not, notify the user and go back to the menu
+
 			break;
 			
 			
@@ -65,11 +87,39 @@ public class UserInput
 		}
 	}
 	
+	
+	
+	/*Method Name:   			getOptionTeamHistory
+	*
+	*Purpose:         			A step needed in order to achieve polymorphism if desired
+	*
+	*
+	*
+	*Input Arguments: 			homeTeam	: The team selected
+	*							statistics	: The statistics of all football matches
+	*
+	**/
+	/***************************************************************************/	
+	
 	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
 	{
 		options = new TeamHistory(userFirstTeamInput, statistics);
 		options.getInformation(statistics, homeTeam, null);
 	}
+	
+	/*Method Name:   			getOptionMatchupStatistics
+	*
+	*Purpose:         			A step needed in order to achieve polymorphism if desired
+	*
+	*
+	*
+	*Input Arguments: 			homeTeam	: The first team selected
+	*							awayTeam	: The second team selected
+	*							statistics	: The statistics of all football matches
+	*
+	**/
+	/***************************************************************************/	
+	
 	
 	public void getOptionMatchupStatistics(String homeTeam,String awayTeam,Statistics statistics)
 	{
@@ -77,11 +127,32 @@ public class UserInput
 		options.getInformation(statistics, homeTeam, awayTeam);
 	}
 	
+	/*Method Name:   			getOptionMatchupHistory
+	*
+	*Purpose:         			A step needed in order to achieve polymorphism if desired
+	*
+	*
+	*
+	*Input Arguments: 			homeTeam	: The first team selected
+	*							awayTeam	: The second team selected
+	*							statistics	: The statistics of all football matches
+	*
+	**/
+	/***************************************************************************/	
+	
 	public void getOptionMatchupHistory(String homeTeam, String awayTeam, Statistics statistics)
 	{
 		options = new MatchupHistory(userFirstTeamInput, userSecondTeamInput, statistics);
 		options.getInformation(statistics, homeTeam, awayTeam);
 	}
+	
+	/*Method Name:   			quit
+	*
+	*Purpose:         			ends the program
+	*
+	**/
+	/***************************************************************************/	
+	
 	
 	public void quit()
 	{
@@ -93,9 +164,23 @@ public class UserInput
 		{
 			System.out.print("ooooooooooooooooooooooooooooooooo");
 		}
+		//The above is part of the original design specifications.
+		//There is nothing wrong with it.
 		System.out.println();
 		System.exit(0);
 		
+	}
+	
+	//Getters and Setters
+	
+	
+	public String getHomeTeam() {
+		return homeTeam;
+	}
+
+
+	public String getAwayTeam() {
+		return awayTeam;
 	}
 	
 	private void setInput(String input)
