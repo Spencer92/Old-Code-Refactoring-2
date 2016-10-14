@@ -91,10 +91,8 @@ public class MatchupHistory extends Options
 
 
 		System.out.print("Please enter the home team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
 		firstTeam = inputTeamOne.next();
 		System.out.print("Please enter the away team (in all caps): ");
-//		userInput3 = new Scanner(System.in);
 		secondTeam = inputTeamTwo.next();		
 		
 		

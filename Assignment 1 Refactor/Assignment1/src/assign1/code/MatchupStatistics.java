@@ -75,10 +75,8 @@ public class MatchupStatistics extends Options
 		
 		int counter;
 		System.out.print("Please enter first team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
 		firstTeam = firstTeamInput.next();
 		System.out.print("Please enter second team (in all caps): ");
-//		userInput3 = new Scanner(System.in);
 		secondTeam = secondTeamInput.next();
 		
 		
@@ -119,22 +117,9 @@ public class MatchupStatistics extends Options
 	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 			String firstTeam, String secondTeam)
 	{
-//		userInput2 = new Scanner(System.in);
-//		userInput3 = new Scanner(System.in);
-//		System.out.print("Please enter first team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
-//		firstTeam = firstTeamInput.next();
-//		System.out.print("Please enter second team (in all caps): ");
-//		userInput3 = new Scanner(System.in);
-//		secondTeam = secondTeamInput.next();
 		firstTeam = this.firstTeam;
 		secondTeam = this.secondTeam;
 		
-/*		matchupStatistics = new MatchupStatistics(teamOne,
-				teamTwo, statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());*/
 		if(isTeamOneExists() && isTeamTwoExists()
 				&& getGamesPlayed() != 0)
 		{
