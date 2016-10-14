@@ -58,21 +58,11 @@ public class Football
 	
 	public static void main(String[] args)
 	{
-		final String teamStatistics = "T";
-		final String getMatchupStatistics = "M";
-		final String showMatchupHistory = "H";
-		final String quit = "Q";
-		String homeTeam;
-		String awayTeam;
 		String input = "\0";
-		int counter;
 		Statistics statistics = new Statistics();
 		Scanner userInput1;
 		Scanner userInput2;
 		Scanner userInput3;
-		MatchupStatistics matchupStatistics;
-		TeamHistory teamHistory;
-		MatchupHistory matchupHistory;
 		UserInput options;
 
 		statistics.process();

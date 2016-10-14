@@ -161,19 +161,7 @@ public class MatchupHistory extends Options
 		int counter;
 		int counterFirstTeam = 0;
 		int counterSecondTeam = 0;
-//		System.out.print("Please enter the home team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
-//		firstTeam = firstTeamInput.next();
-//		System.out.print("Please enter the away team (in all caps): ");
-//		userInput3 = new Scanner(System.in);
-//		secondTeam = secondTeamInput.next();
-		
-/*		matchupHistory = new MatchupHistory(firstTeam,
-				secondTeam, statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway(), statistics.getYear(),
-				statistics.getWeek());*/
+
 		if(!isTeamOneExists())
 		{
 			System.out.println(firstTeam + " is not a valid team name");
@@ -214,16 +202,8 @@ public class MatchupHistory extends Options
 					System.out.println(getTeamDisplayOne()[counterFirstTeam]);
 					counterFirstTeam++;
 				}
-			}/*
-			for(counter = 0; counter < matchupHistory.getMatchesOne(); counter++)
-			{
-				System.out.println(matchupHistory.getTeamDisplayOne()[counter]);
 			}
-			for(counter = 0; counter < matchupHistory.getMatchesTwo(); counter++)
-			{
-				System.out.println(matchupHistory.getTeamDisplayTwo()[counter]);
-			}
-			*/
+
 			//if the team names are valid, display the history between the two teams
 			//otherwise if one or more of the teams don't exist notify the user and
 			//return to the menu
