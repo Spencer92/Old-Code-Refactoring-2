@@ -42,7 +42,6 @@ public class Statistics
 	private int[] hometurn;
 	private int[] awayturn;
 	private int totalLines;
-	private int totalFiles;
 	private String[] allFiles;
 	
 	

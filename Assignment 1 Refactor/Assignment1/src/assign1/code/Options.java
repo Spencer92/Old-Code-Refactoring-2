@@ -16,19 +16,7 @@ public abstract class Options
 	
 	public void start(UserInput input)
 	{
-//		final String teamStatistics = "T";
-//		final String getMatchupStatistics = "M";
-//		final String showMatchupHistory = "H";
-//		final String quit = "Q";
-//		String homeTeam = null;
-//		String awayTeam = null;
-//		int counter;
-//		Scanner userInput1;
-//		Scanner userInput2;
-//		Scanner userInput3;
-//		MatchupStatistics matchupStatistics;
-//		TeamHistory teamHistory = null;
-//		MatchupHistory matchupHistory;
+
 
 		
 		switch (getOption())
@@ -36,8 +24,6 @@ public abstract class Options
 		case Options.TEAM_HISTORY:
 			
 			input.getOptionTeamHistory(input.getHomeTeam(), input.getStatistics());
-//			options = new TeamHistory(homeTeam, statistics);
-//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 
 			//check to see if the team the user entered is in the database,
 			//if so, display the statistics for the team,
@@ -47,15 +33,13 @@ public abstract class Options
 			
 		case Options.MATCHUP_STATISTICS:
 			input.getOptionMatchupStatistics(input.getHomeTeam(),input.getAwayTeam(),input.getStatistics());
-//			options = new MatchupStatistics(homeTeam,awayTeam, statistics);
-//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+
 			break;
 			
 			
 		case Options.MATCHUP_HISTORY:
 			input.getOptionMatchupHistory(input.getHomeTeam(),input.getAwayTeam(),input.getStatistics());
-//			options = new MatchupHistory(homeTeam, awayTeam, statistics);
-//			options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+
 			break;
 			
 		case Options.QUIT:
