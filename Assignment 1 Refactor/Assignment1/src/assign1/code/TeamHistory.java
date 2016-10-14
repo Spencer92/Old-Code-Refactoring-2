@@ -70,14 +70,12 @@ public class TeamHistory extends Options
 		String awayTeam[] = statistics.getAway();
 		
 		System.out.print("Please Enter a team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
 		team = team2.next();		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
 			if(team.equals(homeTeam[counter]))
 			{
-//				System.out.println(homeTeam[counter]);
 				this.teamExists = true;
 				if(homeScore[counter] < awayScore[counter])
 				{
@@ -139,14 +137,6 @@ public class TeamHistory extends Options
 	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 								String firstTeam, String secondTeam) 
 	{
-//		System.out.print("Please Enter a team (in all caps): ");
-//		userInput2 = new Scanner(System.in);
-//		firstTeam = firstTeamInput.next();
-		
-/*		teamHistory = new TeamHistory(team, statistics.getTotalLines(), 
-				statistics.getHomeScore(), statistics.getAwayScore(),
-				statistics.getHome(),
-				statistics.getAway());*/
 		if(isTeamExists())
 		{
 			System.out.println("Stats for " + firstTeam + ":");
