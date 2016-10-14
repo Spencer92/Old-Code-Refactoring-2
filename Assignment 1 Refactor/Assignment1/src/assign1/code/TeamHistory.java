@@ -28,30 +28,31 @@ public class TeamHistory extends Options
 
 
 
-//Class Name:   	TeamHistory
-//
-//Purpose:         Take two previously defined teams
-//							and show the match history between them
-//
-//Input Arguments: 			inputTeam	: a previously defined team for comparison
-//							totalLines  	: the total amount of matches spanning the years
-//							homeScore	 	: the score of the home team
-//							awayScore		: the score of the away team
-//							homeTeam		: a random home team from the list of all matches	
-//							awayTeam		: a random away team from the list of all matches
-//
-//
-//Method Notes:    
-//							The class starts by setting the parameters needed in
-//							case inputTeam doesn't have a valid team name
-//							Once the parameters are set, the class checks to see if
-//							the team being checked actually exists.
-//							If that's determined then the class checks and looks
-//							at the total wins, losses, ties, the most points,
-//							and the percentage of wins.
-		/***************************************************************************/
+/*Class Name:   	TeamHistory
+*
+*Purpose:         Take two previously defined teams
+*							and show the match history between them
+*
+*Input Arguments: 			inputTeam	: a previously defined team for comparison
+*							totalLines  	: the total amount of matches spanning the years
+*							homeScore	 	: the score of the home team
+*							awayScore		: the score of the away team
+*							homeTeam		: a random home team from the list of all matches	
+*							awayTeam		: a random away team from the list of all matches
+*
+*
+*Method Notes:    
+*							The class starts by setting the parameters needed in
+*							case teamInput doesn't have a valid team name
+*							Once the parameters are set, the class checks to see if
+*							the team being checked actually exists.
+*							If that's determined then the class checks and looks
+*							at the total wins, losses, ties, the most points,
+*							and the percentage of wins.
+**/
+/***************************************************************************/
 	
-	public TeamHistory(Scanner team2, Statistics statistics)
+	public TeamHistory(Scanner teamInput, Statistics statistics)
 	{
 		int counter;
 		
@@ -70,7 +71,7 @@ public class TeamHistory extends Options
 		String awayTeam[] = statistics.getAway();
 		
 		System.out.print("Please Enter a team (in all caps): ");
-		team = team2.next();		
+		team = teamInput.next();		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
@@ -133,10 +134,39 @@ public class TeamHistory extends Options
 		}
 	}
 
+	
+	/*Class Name:   		getInformation
+	*
+	*Purpose:         		Displays the information of the team to the screen
+	*
+	*
+	*
+	*Input Arguments: 			inputTeam	: a previously defined team for comparison
+	*							totalLines  	: the total amount of matches spanning the years
+	*							homeScore	 	: the score of the home team
+	*							awayScore		: the score of the away team
+	*							homeTeam		: a random home team from the list of all matches	
+	*							awayTeam		: a random away team from the list of all matches
+	*
+	*
+	*Method Notes:    
+	*							The class starts by setting the parameters needed in
+	*							case teamInput doesn't have a valid team name
+	*							Once the parameters are set, the class checks to see if
+	*							the team being checked actually exists.
+	*							If that's determined then the class checks and looks
+	*							at the total wins, losses, ties, the most points,
+	*							and the percentage of wins.
+	**/
+	/***************************************************************************/	
+	
+	
+	
 	@Override
 	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 								String firstTeam, String secondTeam) 
 	{
+		firstTeam = this.team;
 		if(isTeamExists())
 		{
 			System.out.println("Stats for " + firstTeam + ":");

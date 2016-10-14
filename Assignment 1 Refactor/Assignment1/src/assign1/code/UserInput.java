@@ -7,8 +7,8 @@ public class UserInput
 	private Options options;
 	private String input;
 	private Statistics statistics;
-	private Scanner userInput2;
-	private Scanner userInput3;
+	private Scanner userFirstTeamInput;
+	private Scanner userSecondTeamInput;
 	private String homeTeam = null;
 	private String awayTeam = null;
 	
@@ -26,8 +26,8 @@ public class UserInput
 	{
 		setInput(input);
 		setStatistics(statistics);
-		setUserInput2(userInput2);
-		setUserInput3(userInput3);
+		setUserFirstTeamInput(userInput2);
+		setUserSecondTeamInput(userInput3);
 	}
 	
 	
@@ -67,20 +67,20 @@ public class UserInput
 	
 	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
 	{
-		options = new TeamHistory(userInput2, statistics);
-		options.getInformation(statistics, userInput2, userInput3, homeTeam, null);
+		options = new TeamHistory(userFirstTeamInput, statistics);
+		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, null);
 	}
 	
 	public void getOptionMatchupStatistics(String homeTeam,String awayTeam,Statistics statistics)
 	{
-		options = new MatchupStatistics(userInput2, userInput3, statistics);
-		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+		options = new MatchupStatistics(userFirstTeamInput, userSecondTeamInput, statistics);
+		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, awayTeam);
 	}
 	
 	public void getOptionMatchupHistory(String homeTeam, String awayTeam, Statistics statistics)
 	{
-		options = new MatchupHistory(userInput2, userInput3, statistics);
-		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
+		options = new MatchupHistory(userFirstTeamInput, userSecondTeamInput, statistics);
+		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, awayTeam);
 	}
 	
 	public void quit()
@@ -119,23 +119,23 @@ public class UserInput
 	}
 
 
-	private Scanner getUserInput2() {
-		return userInput2;
+	private Scanner getFirstTeamInput() {
+		return userFirstTeamInput;
 	}
 
 
-	private void setUserInput2(Scanner userInput2) {
-		this.userInput2 = userInput2;
+	private void setUserFirstTeamInput(Scanner userInput2) {
+		this.userFirstTeamInput = userInput2;
 	}
 
 
-	private Scanner getUserInput3() {
-		return userInput3;
+	private Scanner getSecondTeamInput() {
+		return userSecondTeamInput;
 	}
 
 
-	private void setUserInput3(Scanner userInput3) {
-		this.userInput3 = userInput3;
+	private void setUserSecondTeamInput(Scanner userInput3) {
+		this.userSecondTeamInput = userInput3;
 	}
 
 

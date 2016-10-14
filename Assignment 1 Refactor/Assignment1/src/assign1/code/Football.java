@@ -25,44 +25,35 @@ import java.util.Scanner;
 public class Football 
 {
 	
-//Class Name:   			main
-//
-//Purpose:        			Take two previously defined teams
-//							and show the match history between them
-//
-//
-//Method Notes:    
-//							Once the user makes a selection:
-//							
-//							Get team statistics:
-//								Once the user enters the team and the team is real,
-//								The wins, losses, ties, highest score, and win
-//								percentage are displayed
-//								otherwise the user is notified that the team is invalid
-//								and goes back to the menu
-//							Get matchup statistics:
-//								Once the user enters the two teams and the teams are real,
-//								The games played, the home team wins, the away team wins,
-//								the games ties, and the team favour are displayed
-//								if one or more of the teams are invalid, or the teams
-//								never faced each other, then the user is notified and
-//								brought back to the menu
-//							Show matchup history:
-//								Once the user enters the two teams and the teams are real,
-//								the matches, results, when the match was done, the final
-//								score between teams are displayed
-//								if one or more team names are not correct, then the user
-//								is notified and brought back to the menu
-//
-//
+
+	
+	/*
+	 * Class Name	:		main
+	 * 
+	 * Purpose   	:		The statistics of all football games, from 1922 to 2013, are taken from its 
+	 * 						raw form, and converted into general information about the teams.
+	 * 
+	 * Method Notes	:		There are three options to choose from:
+	 * 							If "T" is selected, the individuals team history is shown, with its
+	 * 							wins, losses, ties, highest score, and win percentage.
+	 * 
+	 * 							If "M" is selected, statistics of games between two teams is shown,
+	 * 							Which includes the general results between the two teams, and 
+	 * 							what team in favoured in the matchup
+	 * 
+	 * 							IF "H" is selected, the results of every game between the two teams
+	 * 							are displayed, including the year it was played, the week it was
+	 * 							played, and the score for each team.	
+	 * 
+	 */
 	
 	public static void main(String[] args)
 	{
 		String input = "\0";
 		Statistics statistics = new Statistics();
-		Scanner userInput1;
-		Scanner userInput2;
-		Scanner userInput3;
+		Scanner userInput;
+		Scanner userFirstTeamInput;
+		Scanner userSecondTeamInput;
 		UserInput options;
 
 		statistics.process();
@@ -75,11 +66,11 @@ public class Football
 			System.out.println("Q - Quit");
 			System.out.print("Please enter your choice (in all caps): ");
 			
-			userInput1 = new Scanner(System.in);
-			userInput2 = new Scanner(System.in);
-			userInput3 = new Scanner(System.in);
-			input = userInput1.next();
-			options = new UserInput(input, statistics, userInput2, userInput3);
+			userInput = new Scanner(System.in);
+			userFirstTeamInput = new Scanner(System.in);
+			userSecondTeamInput = new Scanner(System.in);
+			input = userInput.next();
+			options = new UserInput(input, statistics, userFirstTeamInput, userSecondTeamInput);
 			options.start();
 			
 			

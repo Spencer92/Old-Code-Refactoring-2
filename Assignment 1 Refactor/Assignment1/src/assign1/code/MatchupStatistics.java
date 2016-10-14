@@ -31,30 +31,30 @@ public class MatchupStatistics extends Options
 	private String secondTeam;
 	
 	
-//Class Name:   	MatchupStatistics
-//
-//Purpose:         Take two previously defined teams
-//						and show the match history between them
-//
-//Input Arguments: 		inputTeamOne	: a previously defined team for comparison
-//						inputTeamTwo	: a previously defined team for comparison 
-//						totalLines  	: the total amount of matches spanning the years
-//						homeScore	 	: the score of the home team
-//						awayScore		: the score of the away team
-//						homeTeam		: a random home team from the list of all matches	
-//						awayTeam		: a random away team from the list of all matches
-//
-//
-//Method Notes:    
-//						The class starts by setting the parameters needed in
-//						case inputTeamOne or inputTeamTwo don't have
-//						valid team names
-//						Once the parameters are set, the class checks to see if
-//						the teams being checked actually exist.
-//						if that's determined then how the teams faired against
-//						each other are determined, as well as how much
-//						games were played between each other
-//
+/*Class Name:   	MatchupStatistics
+*
+*Purpose:         Take two previously defined teams
+*						and show the match history between them
+*
+*Input Arguments: 		inputTeamOne	: a previously defined team for comparison
+*						inputTeamTwo	: a previously defined team for comparison 
+*						totalLines  	: the total amount of matches spanning the years
+*						homeScore	 	: the score of the home team
+*						awayScore		: the score of the away team
+*						homeTeam		: a random home team from the list of all matches	
+*						awayTeam		: a random away team from the list of all matches
+*
+*
+*Method Notes:    
+*						The class starts by setting the parameters needed in
+*						case inputTeamOne or inputTeamTwo don't have
+*						valid team names
+*						Once the parameters are set, the class checks to see if
+*						the teams being checked actually exist.
+*						if that's determined then how the teams faired against
+*						each other are determined, as well as how much
+*						games were played between each other
+**/
 	/***************************************************************************/
 	public MatchupStatistics(Scanner firstTeamInput,
 			Scanner secondTeamInput, Statistics statistics)

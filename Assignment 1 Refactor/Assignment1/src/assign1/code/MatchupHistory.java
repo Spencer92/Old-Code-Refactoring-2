@@ -41,33 +41,29 @@ public class MatchupHistory extends Options
 
 
 	/***************************************************************************/
-// Class Name:   	MatchupHistory
-//
-// Purpose:         Take two previously defined teams
-//					and show the match history between them
-//
-// Input Arguments: inputTeamOne	: a previously defined team for comparison
-//					inputTeamTwo	: a previously defined team for comparison 
-//					totalLines  	: the total amount of matches spanning the years
-//					homeScore	 	: the score of the home team
-//					awayScore		: the score of the away team
-//					homeTeam		: a random home team from the list of all matches	
-//					awayTeam		: a random away team from the list of all matches
-//					year			: the year the match was played
-//					week			: the week the match was played
-//
-//
-// Method Notes:    
-//					The class starts by setting the parameters needed in
-//					case inputTeamOne or inputTeamTwo don't have
-//					valid team names
-//					Once the parameters are set, the class checks to see if
-//					the teams being checked actually exist.
-//					if that's determined then the amount of matches between the
-//					two teams are calculated
-//
-//					The class then looks at the history from the two teams (if
-//					they are valid) and store's them for later display
+/* Class Name		: 	MatchupHistory
+*
+* Purpose			:   Take two previously defined teams
+*						and show the match history between them
+*
+* Input Arguments	: 	inputTeamOne	: The first team a user asked about
+*						inputTeamTwo	: The second team that the user wanted to compare
+*										  the first team to. 
+*						statistics		: The statistics of all matches played
+*
+* Method Notes		:    
+*						The class starts by setting the parameters needed in
+*						case inputTeamOne or inputTeamTwo don't have
+*						valid team names
+*						Once the parameters are set, the class checks to see if
+*						the teams being checked actually exist.
+*						if that's determined then the amount of matches between the
+*						two teams are calculated
+*
+*						The class then looks at the history from the two teams (if
+*						they are valid) and store's them for later display
+*
+**/
 	/***************************************************************************/
 
 
