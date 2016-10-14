@@ -27,6 +27,8 @@ public class MatchupStatistics extends Options
 	private int teamTwoWins;
 	private int ties;
 	private int gamesPlayed;
+	private String firstTeam;
+	private String secondTeam;
 	
 	
 //Class Name:   	MatchupStatistics
@@ -54,8 +56,8 @@ public class MatchupStatistics extends Options
 //						games were played between each other
 //
 	/***************************************************************************/
-	public MatchupStatistics(String inputTeamOne,
-			String inputTeamTwo, Statistics statistics)
+	public MatchupStatistics(Scanner firstTeamInput,
+			Scanner secondTeamInput, Statistics statistics)
 	{
 		
 		int totalLines = statistics.getTotalLines();
@@ -72,19 +74,26 @@ public class MatchupStatistics extends Options
 		this.gamesPlayed = 0;
 		
 		int counter;
+		System.out.print("Please enter first team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		firstTeam = firstTeamInput.next();
+		System.out.print("Please enter second team (in all caps): ");
+//		userInput3 = new Scanner(System.in);
+		secondTeam = secondTeamInput.next();
+		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
-			if(inputTeamOne.equals(homeTeam[counter]))
+			if(firstTeam.equals(homeTeam[counter]))
 			{
 				this.teamOneExists = true;
 			}
-			if(inputTeamTwo.equals(awayTeam[counter]))
+			if(secondTeam.equals(awayTeam[counter]))
 			{
 				this.teamTwoExists = true;
 			}
 			//find out if teams exist
-			if(inputTeamOne.equals(homeTeam[counter]) && inputTeamTwo.equals(awayTeam[counter]))
+			if(firstTeam.equals(homeTeam[counter]) && secondTeam.equals(awayTeam[counter]))
 			{
 				if(homeScore[counter] > awayScore[counter])
 				{
@@ -112,13 +121,14 @@ public class MatchupStatistics extends Options
 	{
 //		userInput2 = new Scanner(System.in);
 //		userInput3 = new Scanner(System.in);
-		System.out.print("Please enter first team (in all caps): ");
+//		System.out.print("Please enter first team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
-		firstTeam = firstTeamInput.next();
-		System.out.print("Please enter second team (in all caps): ");
+//		firstTeam = firstTeamInput.next();
+//		System.out.print("Please enter second team (in all caps): ");
 //		userInput3 = new Scanner(System.in);
-		secondTeam = secondTeamInput.next();
-		
+//		secondTeam = secondTeamInput.next();
+		firstTeam = this.firstTeam;
+		secondTeam = this.secondTeam;
 		
 /*		matchupStatistics = new MatchupStatistics(teamOne,
 				teamTwo, statistics.getTotalLines(), 

@@ -26,8 +26,8 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("NO");
 		input2 = new Scanner("HOU");
-		history = new MatchupHistory("NO",
-				"HOU", statistics);
+		history = new MatchupHistory(input1,
+				input2, statistics);
 		history.getInformation(statistics, input1, input2, null, null);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
@@ -47,8 +47,8 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("HOU");
 		input2 = new Scanner("SEA");
-		history = new MatchupHistory("HOU",
-				"SEA", statistics);
+		history = new MatchupHistory(input1,
+				input2, statistics);
 //		MatchupHistory history = userInput.getMatchupHistoryRaw();
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
@@ -71,8 +71,8 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("SEA");
 		input2 = new Scanner("JAC");
-		history = new MatchupHistory("SEA",
-				"JAC", statistics);
+		history = new MatchupHistory(input1,
+				input2, statistics);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -95,8 +95,8 @@ public class TestMatchupHistory
 	{
 		input1 = new Scanner("JAC");
 		input2 = new Scanner("BUF");
-		history = new MatchupHistory("JAC",
-				"BUF", statistics);
+		history = new MatchupHistory(input1,
+				input2, statistics);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		

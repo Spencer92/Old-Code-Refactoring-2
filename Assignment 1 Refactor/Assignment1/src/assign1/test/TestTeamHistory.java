@@ -24,7 +24,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("NO");
-		team = new TeamHistory("NO", statistics);
+		team = new TeamHistory(input2, statistics);
 		assertEquals(team.getWins(),324);
 		assertEquals(team.getLosses(),409);
 		assertEquals(team.getTies(),5);
@@ -38,7 +38,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("HOU");
-		team = new TeamHistory("HOU", statistics);
+		team = new TeamHistory(input2, statistics);
 		assertEquals(team.getWins(),81);
 		assertEquals(team.getLosses(),115);
 		assertEquals(team.getTies(),0);
@@ -52,7 +52,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("SEA");
-		team = new TeamHistory("SEA", statistics);
+		team = new TeamHistory(input2, statistics);
 		assertEquals(team.getWins(),305);
 		assertEquals(team.getLosses(),315);
 		assertEquals(team.getTies(),0);
@@ -66,7 +66,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("JAC");
-		team = new TeamHistory("JAC", statistics);
+		team = new TeamHistory(input2, statistics);
 		assertEquals(team.getWins(),149);
 		assertEquals(team.getLosses(),166);
 		assertEquals(team.getTies(),0);
@@ -80,7 +80,7 @@ public class TestTeamHistory
 	{
 		
 		input2 = new Scanner("BUF");
-		team = new TeamHistory("BUF", statistics);
+		team = new TeamHistory(input2, statistics);
 		assertEquals(team.getWins(),323);
 		assertEquals(team.getLosses(),380);
 		assertEquals(team.getTies(),2);

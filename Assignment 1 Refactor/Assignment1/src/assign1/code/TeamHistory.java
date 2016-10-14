@@ -24,6 +24,7 @@ public class TeamHistory extends Options
 	private boolean teamExists;
 	private int mostPoints;
 	private double winPercentage;
+	private String team;
 
 
 
@@ -50,7 +51,7 @@ public class TeamHistory extends Options
 //							and the percentage of wins.
 		/***************************************************************************/
 	
-	public TeamHistory(String inputTeam, Statistics statistics)
+	public TeamHistory(Scanner team2, Statistics statistics)
 	{
 		int counter;
 		
@@ -68,11 +69,13 @@ public class TeamHistory extends Options
 		String homeTeam[] = statistics.getHome();
 		String awayTeam[] = statistics.getAway();
 		
-		
+		System.out.print("Please Enter a team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		team = team2.next();		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
-			if(inputTeam.equals(homeTeam[counter]))
+			if(team.equals(homeTeam[counter]))
 			{
 //				System.out.println(homeTeam[counter]);
 				this.teamExists = true;
@@ -97,7 +100,7 @@ public class TeamHistory extends Options
 				//in order to find out the wins, losses, ties, and
 				//highest score
 			}
-			else if(inputTeam.equals(awayTeam[counter]))
+			else if(team.equals(awayTeam[counter]))
 			{
 				this.teamExists = true;
 				if(homeScore[counter] > awayScore[counter])
@@ -136,9 +139,9 @@ public class TeamHistory extends Options
 	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
 								String firstTeam, String secondTeam) 
 	{
-		System.out.print("Please Enter a team (in all caps): ");
+//		System.out.print("Please Enter a team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
-		firstTeam = firstTeamInput.next();
+//		firstTeam = firstTeamInput.next();
 		
 /*		teamHistory = new TeamHistory(team, statistics.getTotalLines(), 
 				statistics.getHomeScore(), statistics.getAwayScore(),

@@ -31,8 +31,8 @@ public class MatchupHistory extends Options
 	private String[] teamDisplayTwo;
 	private int matchesOne;
 	private int matchesTwo;
-	private String inputTeamOne;
-	private String inputTeamTwo;
+	private String firstTeam;
+	private String secondTeam;
 
 	private int[] yearTeamOne;
 	private int[] yearTeamTwo;
@@ -71,8 +71,8 @@ public class MatchupHistory extends Options
 	/***************************************************************************/
 
 
-	public MatchupHistory(String inputTeamOne,
-			String inputTeamTwo, Statistics statistics)
+	public MatchupHistory(Scanner inputTeamOne,
+			Scanner inputTeamTwo, Statistics statistics)
 	{
 		int counter;
 		int matchCounterOne = 0;
@@ -88,27 +88,32 @@ public class MatchupHistory extends Options
 		this.teamTwoExists = false;
 		this.matchesOne = 0;
 		this.matchesTwo = 0;
-		this.inputTeamOne = inputTeamOne;
-		this.inputTeamTwo = inputTeamTwo;
-		
+
+
+		System.out.print("Please enter the home team (in all caps): ");
+//		userInput2 = new Scanner(System.in);
+		firstTeam = inputTeamOne.next();
+		System.out.print("Please enter the away team (in all caps): ");
+//		userInput3 = new Scanner(System.in);
+		secondTeam = inputTeamTwo.next();		
 		
 		
 		for(counter = 0; counter < totalLines; counter++)
 		{
-			if(inputTeamOne.equals(homeTeam[counter]))
+			if(firstTeam.equals(homeTeam[counter]))
 			{
 				this.teamOneExists = true;
 			}
-			if(inputTeamTwo.equals(awayTeam[counter]))
+			if(secondTeam.equals(awayTeam[counter]))
 			{
 				this.teamTwoExists = true;
 			}
 			
-			if(inputTeamOne.equals(homeTeam[counter]) && inputTeamTwo.equals(awayTeam[counter]))
+			if(firstTeam.equals(homeTeam[counter]) && secondTeam.equals(awayTeam[counter]))
 			{
 				this.matchesOne++;
 			}
-			if(inputTeamOne.equals(awayTeam[counter]) && inputTeamTwo.equals(homeTeam[counter]))
+			if(firstTeam.equals(awayTeam[counter]) && secondTeam.equals(homeTeam[counter]))
 			{
 				this.matchesTwo++;
 			}
@@ -123,24 +128,24 @@ public class MatchupHistory extends Options
 			this.teamDisplayTwo = new String[matchesTwo];
 			for(counter = 0; counter < totalLines; counter++)
 			{
-				if(inputTeamOne.equals(homeTeam[counter]) && inputTeamTwo.equals(awayTeam[counter]))
+				if(firstTeam.equals(homeTeam[counter]) && secondTeam.equals(awayTeam[counter]))
 				{
 					this.teamDisplayOne[matchCounterOne] = Integer.toString(year[counter]) + " " +
-													week[counter] + "\t  " + inputTeamTwo + "  " +
+													week[counter] + "\t  " + secondTeam + "  " +
 													Integer.toString(awayScore[counter]) + " \t  " +
-													inputTeamOne + " \t" + Integer.toString(homeScore[counter]);
+													firstTeam + " \t" + Integer.toString(homeScore[counter]);
 					this.yearTeamOne[matchCounterOne] = year[counter];
 					matchCounterOne++;
 					//displays the history of the match for when the first team is home
 					//and the second team is away
 				}
-				else if(inputTeamOne.equals(awayTeam[counter]) && inputTeamTwo.equals(homeTeam[counter]))
+				else if(firstTeam.equals(awayTeam[counter]) && secondTeam.equals(homeTeam[counter]))
 				{
 
 					this.teamDisplayTwo[matchCounterTwo] = Integer.toString(year[counter]) + " " +
-							week[counter] + "\t  " + inputTeamOne + "  " +
+							week[counter] + "\t  " + firstTeam + "  " +
 							Integer.toString(awayScore[counter]) + " \t  " +
-							inputTeamTwo + " \t" + Integer.toString(homeScore[counter]);
+							secondTeam + " \t" + Integer.toString(homeScore[counter]);
 					this.yearTeamTwo[matchCounterTwo] = year[counter];
 					matchCounterTwo++;
 					
@@ -151,17 +156,17 @@ public class MatchupHistory extends Options
 	
 	@Override
 	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
-			String firstTeam, String secondTeam)
+			String teamOne, String teamTwo)
 	{
 		int counter;
 		int counterFirstTeam = 0;
 		int counterSecondTeam = 0;
-		System.out.print("Please enter the home team (in all caps): ");
+//		System.out.print("Please enter the home team (in all caps): ");
 //		userInput2 = new Scanner(System.in);
-		firstTeam = firstTeamInput.next();
-		System.out.print("Please enter the away team (in all caps): ");
+//		firstTeam = firstTeamInput.next();
+//		System.out.print("Please enter the away team (in all caps): ");
 //		userInput3 = new Scanner(System.in);
-		secondTeam = secondTeamInput.next();
+//		secondTeam = secondTeamInput.next();
 		
 /*		matchupHistory = new MatchupHistory(firstTeam,
 				secondTeam, statistics.getTotalLines(), 
@@ -267,12 +272,12 @@ public class MatchupHistory extends Options
 
 	public String getTeamOne()
 	{
-		return this.inputTeamOne;
+		return this.firstTeam;
 	}
 	
 	public String getTeamTwo()
 	{
-		return this.inputTeamTwo;
+		return this.secondTeam;
 	}
 	
 	public MatchupHistory getMatchupHistoryRaw()

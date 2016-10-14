@@ -36,8 +36,7 @@ public class UserInput
 	
 	public void start()
 	{
-		options.start(this);
-/*		final String teamStatistics = "T";
+		final String teamStatistics = "T";
 		final String getMatchupStatistics = "M";
 		final String showMatchupHistory = "H";
 		final String quit = "Q";
@@ -86,24 +85,24 @@ public class UserInput
 		default:
 			System.out.println("Invalid input, please try again!");
 			break;
-		}*/
+		}
 	}
 	
 	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
 	{
-		options = new TeamHistory(homeTeam, statistics);
+		options = new TeamHistory(userInput2, statistics);
 		options.getInformation(statistics, userInput2, userInput3, homeTeam, null);
 	}
 	
 	public void getOptionMatchupStatistics(String homeTeam,String awayTeam,Statistics statistics)
 	{
-		options = new MatchupStatistics(homeTeam,awayTeam, statistics);
+		options = new MatchupStatistics(userInput2, userInput3, statistics);
 		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 	}
 	
 	public void getOptionMatchupHistory(String homeTeam, String awayTeam, Statistics statistics)
 	{
-		options = new MatchupHistory(homeTeam, awayTeam, statistics);
+		options = new MatchupHistory(userInput2, userInput3, statistics);
 		options.getInformation(statistics, userInput2, userInput3, homeTeam, awayTeam);
 	}
 	
