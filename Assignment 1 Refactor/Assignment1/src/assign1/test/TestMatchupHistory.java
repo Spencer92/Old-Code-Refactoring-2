@@ -28,7 +28,6 @@ public class TestMatchupHistory
 		input2 = new Scanner("HOU");
 		history = new MatchupHistory(input1,
 				input2, statistics);
-		history.getInformation(statistics, input1, input2, null, null);
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		
@@ -49,7 +48,6 @@ public class TestMatchupHistory
 		input2 = new Scanner("SEA");
 		history = new MatchupHistory(input1,
 				input2, statistics);
-//		MatchupHistory history = userInput.getMatchupHistoryRaw();
 		String[] teamOne = history.getTeamDisplayOne();
 		String[] teamTwo = history.getTeamDisplayTwo();
 		

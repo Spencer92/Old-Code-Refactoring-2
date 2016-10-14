@@ -11,8 +11,7 @@ public abstract class Options
 	
 	
 	abstract String getOption();
-	abstract void getInformation(Statistics statistics, Scanner firstTeamInput,
-			Scanner secondTeamInput, String firstTeam, String SecondTeam);
+	abstract void getInformation(Statistics statistics, String firstTeam, String SecondTeam);
 	
 	public void start(UserInput input)
 	{

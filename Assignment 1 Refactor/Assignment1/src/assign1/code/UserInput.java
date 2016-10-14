@@ -68,19 +68,19 @@ public class UserInput
 	public void getOptionTeamHistory(String homeTeam, Statistics statistics)
 	{
 		options = new TeamHistory(userFirstTeamInput, statistics);
-		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, null);
+		options.getInformation(statistics, homeTeam, null);
 	}
 	
 	public void getOptionMatchupStatistics(String homeTeam,String awayTeam,Statistics statistics)
 	{
 		options = new MatchupStatistics(userFirstTeamInput, userSecondTeamInput, statistics);
-		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, awayTeam);
+		options.getInformation(statistics, homeTeam, awayTeam);
 	}
 	
 	public void getOptionMatchupHistory(String homeTeam, String awayTeam, Statistics statistics)
 	{
 		options = new MatchupHistory(userFirstTeamInput, userSecondTeamInput, statistics);
-		options.getInformation(statistics, userFirstTeamInput, userSecondTeamInput, homeTeam, awayTeam);
+		options.getInformation(statistics, homeTeam, awayTeam);
 	}
 	
 	public void quit()

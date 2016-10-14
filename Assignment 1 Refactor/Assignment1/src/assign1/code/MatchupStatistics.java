@@ -109,13 +109,28 @@ public class MatchupStatistics extends Options
 				//find out which team beat which, and add the appropriate win to the correct
 				//team
 			}
+			else if(firstTeam.equals(awayTeam[counter]) && secondTeam.equals(homeTeam[counter]))
+			{
+				if(homeScore[counter] > awayScore[counter])
+				{
+					this.teamTwoWins++;
+				}
+				else if(homeScore[counter] < awayScore[counter])
+				{
+					this.teamOneWins++;
+				}
+				else
+				{
+					this.ties++;
+				}
+				this.gamesPlayed++;
+			}
 		}
 		
 	}
 
 	@Override
-	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
-			String firstTeam, String secondTeam)
+	public void getInformation(Statistics statistics, String firstTeam, String secondTeam)
 	{
 		firstTeam = this.firstTeam;
 		secondTeam = this.secondTeam;

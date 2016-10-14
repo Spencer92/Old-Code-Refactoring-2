@@ -163,8 +163,7 @@ public class TeamHistory extends Options
 	
 	
 	@Override
-	public void getInformation(Statistics statistics, Scanner firstTeamInput, Scanner secondTeamInput,
-								String firstTeam, String secondTeam) 
+	public void getInformation(Statistics statistics, String firstTeam, String secondTeam) 
 	{
 		firstTeam = this.team;
 		if(isTeamExists())

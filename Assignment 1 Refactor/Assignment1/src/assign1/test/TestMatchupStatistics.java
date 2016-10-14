@@ -31,9 +31,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("HOU");
 		MatchupStatistics noVShou = new MatchupStatistics(input1,
 				input2, statistics);	
-		assertEquals(noVShou.getGamesPlayed(),2);
+		assertEquals(noVShou.getGamesPlayed(),3);
 		assertEquals(noVShou.getTeamOneWins(),2);
-		assertEquals(noVShou.getTeamTwoWins(),0);
+		assertEquals(noVShou.getTeamTwoWins(),1);
 		assertEquals(noVShou.getTies(),0);
 		
 	}
@@ -45,9 +45,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("SEA");
 		MatchupStatistics noVSsea = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(noVSsea.getGamesPlayed(),5);
-		assertEquals(noVSsea.getTeamOneWins(),3);
-		assertEquals(noVSsea.getTeamTwoWins(),2);
+		assertEquals(noVSsea.getGamesPlayed(),14);
+		assertEquals(noVSsea.getTeamOneWins(),6);
+		assertEquals(noVSsea.getTeamTwoWins(),8);
 		assertEquals(noVSsea.getTies(),0);
 		
 	}
@@ -59,9 +59,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("JAC");
 		MatchupStatistics noVSjac = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(noVSjac.getGamesPlayed(),2);
-		assertEquals(noVSjac.getTeamOneWins(),2);
-		assertEquals(noVSjac.getTeamTwoWins(),0);
+		assertEquals(noVSjac.getGamesPlayed(),5);
+		assertEquals(noVSjac.getTeamOneWins(),3);
+		assertEquals(noVSjac.getTeamTwoWins(),2);
 		assertEquals(noVSjac.getTies(),0);
 		
 	}
@@ -73,9 +73,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("BUF");
 		MatchupStatistics noVSbuf = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(noVSbuf.getGamesPlayed(),6);
-		assertEquals(noVSbuf.getTeamOneWins(),3);
-		assertEquals(noVSbuf.getTeamTwoWins(),3);
+		assertEquals(noVSbuf.getGamesPlayed(),10);
+		assertEquals(noVSbuf.getTeamOneWins(),6);
+		assertEquals(noVSbuf.getTeamTwoWins(),4);
 		assertEquals(noVSbuf.getTies(),0);
 		
 	}
@@ -87,9 +87,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("SEA");
 		MatchupStatistics houVSsea = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(houVSsea.getGamesPlayed(),2);
+		assertEquals(houVSsea.getGamesPlayed(),3);
 		assertEquals(houVSsea.getTeamOneWins(),1);
-		assertEquals(houVSsea.getTeamTwoWins(),1);
+		assertEquals(houVSsea.getTeamTwoWins(),2);
 		assertEquals(houVSsea.getTies(),0);
 		
 	}
@@ -101,9 +101,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("JAC");
 		MatchupStatistics houVSjac = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(houVSjac.getGamesPlayed(),12);
-		assertEquals(houVSjac.getTeamOneWins(),8);
-		assertEquals(houVSjac.getTeamTwoWins(),4);
+		assertEquals(houVSjac.getGamesPlayed(),24);
+		assertEquals(houVSjac.getTeamOneWins(),13);
+		assertEquals(houVSjac.getTeamTwoWins(),11);
 		assertEquals(houVSjac.getTies(),0);
 		
 	}
@@ -115,9 +115,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("BUF");
 		MatchupStatistics houVSbuf = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(houVSbuf.getGamesPlayed(),3);
-		assertEquals(houVSbuf.getTeamOneWins(),1);
-		assertEquals(houVSbuf.getTeamTwoWins(),2);
+		assertEquals(houVSbuf.getGamesPlayed(),6);
+		assertEquals(houVSbuf.getTeamOneWins(),3);
+		assertEquals(houVSbuf.getTeamTwoWins(),3);
 		assertEquals(houVSbuf.getTies(),0);
 		
 	}
@@ -129,9 +129,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("JAC");
 		MatchupStatistics seaVSjac = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(seaVSjac.getGamesPlayed(),3);
-		assertEquals(seaVSjac.getTeamOneWins(),3);
-		assertEquals(seaVSjac.getTeamTwoWins(),0);
+		assertEquals(seaVSjac.getGamesPlayed(),7);
+		assertEquals(seaVSjac.getTeamOneWins(),5);
+		assertEquals(seaVSjac.getTeamTwoWins(),2);
 		assertEquals(seaVSjac.getTies(),0);
 		
 	}
@@ -143,9 +143,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("BUF");
 		MatchupStatistics seaVSbuf = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(seaVSbuf.getGamesPlayed(),8);
-		assertEquals(seaVSbuf.getTeamOneWins(),5);
-		assertEquals(seaVSbuf.getTeamTwoWins(),3);
+		assertEquals(seaVSbuf.getGamesPlayed(),12);
+		assertEquals(seaVSbuf.getTeamOneWins(),7);
+		assertEquals(seaVSbuf.getTeamTwoWins(),5);
 		assertEquals(seaVSbuf.getTies(),0);
 		
 	}
@@ -157,9 +157,9 @@ public class TestMatchupStatistics
 		input2 = new Scanner("BUF");
 		MatchupStatistics jacVSbuf = new MatchupStatistics(input1,
 				input2, statistics);
-		assertEquals(jacVSbuf.getGamesPlayed(),6);
-		assertEquals(jacVSbuf.getTeamOneWins(),2);
-		assertEquals(jacVSbuf.getTeamTwoWins(),4);
+		assertEquals(jacVSbuf.getGamesPlayed(),13);
+		assertEquals(jacVSbuf.getTeamOneWins(),6);
+		assertEquals(jacVSbuf.getTeamTwoWins(),7);
 		assertEquals(jacVSbuf.getTies(),0);
 		
 	}
